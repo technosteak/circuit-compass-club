@@ -175,8 +175,11 @@
                             <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
                             <span class="absolute top-2 right-2 bg-slate-900/70 backdrop-blur text-white text-[10px] font-bold px-2 py-0.5 rounded-md">★ ${item.rating}</span>
                         </a>
-                        <span class="text-[10px] md:text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">${item.category}</span>
-                        <a href="product/${item.slug}/" class="block font-bold text-sm md:text-base mt-2 mb-1 text-slate-800 line-clamp-2 hover:text-blue-600 transition">${item.title}</a>
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="text-[10px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-md">${item.category}</span>
+                            <span class="text-[10px] font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md">${item.badge}</span>
+                        </div>
+                        <a href="product/${item.slug}/" class="block font-bold text-sm md:text-base mt-1 mb-1 text-slate-800 line-clamp-2 hover:text-blue-600 transition">${item.title}</a>
                         <p class="text-slate-500 text-xs line-clamp-2 mb-3">${item.desc}</p>
                     </div>
                     <div>
