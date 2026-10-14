@@ -6,69 +6,74 @@
     <title>ТехноСтейк — Каталог техники и обзоры</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans">
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+    <!-- Шапка -->
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="text-xl font-black bg-blue-600 text-white px-3.5 py-1.5 rounded-xl shadow-sm">ТС</span>
+                <span class="text-xl font-bold tracking-tight text-slate-900">ТехноСтейк</span>
+            </div>
             <div class="flex items-center space-x-2">
-                <span class="text-xl font-bold bg-blue-600 text-white px-3 py-1 rounded-lg">ТС</span>
-                <span class="text-xl font-bold tracking-tight">ТехноСтейк</span>
-            </div>
-            <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-600">
-                <a href="#smartphones" class="hover:text-blue-600">Смартфоны</a>
-                <a href="#laptops" class="hover:text-blue-600">Ноутбуки</a>
-                <a href="#gaming" class="hover:text-blue-600">Игры</a>
-                <a href="#smart-home" class="hover:text-blue-600">Умный дом</a>
-            </div>
-            <div>
-                <span class="text-xs bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full font-medium">Белый каталог</span>
+                <span class="text-xs bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1.5 rounded-full font-semibold">Live Каталог</span>
             </div>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 py-8">
-        <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-8 md:p-12 text-white mb-12 shadow-xl">
-            <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">Выбирайте технику с умом, а не наугад</h1>
-            <p class="text-blue-100 max-w-xl mb-6 text-base md:text-lg">Честные обзоры, актуальные видео и сравнение цен. Прямые партнерские ссылки на лучшие предложения Яндекс Маркета.</p>
+    <!-- Основной контент -->
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        <!-- Баннер -->
+        <div class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-6 md:p-10 text-white mb-8 shadow-xl relative overflow-hidden">
+            <div class="relative z-10">
+                <h1 class="text-2xl md:text-4xl font-black mb-3 tracking-tight">Техника с умом и честными обзорами</h1>
+                <p class="text-blue-100 max-w-xl text-sm md:text-base leading-relaxed">Лучшие предложения, актуальные цены и прямые партнерские ссылки на Яндекс Маркет.</p>
+            </div>
         </div>
 
-        <h2 class="text-2xl font-bold mb-6 text-slate-800">Популярные товары и обзоры</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+        <!-- Сетка товаров -->
+        <h2 class="text-xl font-bold mb-4 text-slate-800">Популярные товары</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
+            <!-- Товар 1 -->
+            <div class="bg-white rounded-2xl border border-slate-200 p-3 md:p-4 shadow-sm hover:shadow-md transition flex flex-col justify-between">
                 <div>
-                    <div class="bg-slate-100 h-48 rounded-xl mb-4 flex items-center justify-center text-slate-400 font-medium">PlayBox 5</div>
-                    <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Игры</span>
-                    <h3 class="font-semibold text-lg mt-2 mb-1 text-slate-800">PlayBox 5 Digital Edition</h3>
-                    <p class="text-slate-500 text-sm mb-4">Мощная игровая консоль нового поколения с поддержкой трассировки лучей.</p>
+                    <div class="bg-slate-100 h-36 md:h-48 rounded-xl mb-3 overflow-hidden flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=500&q=80" alt="PlayBox 5" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[10px] md:text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Игры</span>
+                    <h3 class="font-bold text-sm md:text-base mt-2 mb-1 text-slate-800 line-clamp-2">PlayBox 5 Digital Edition</h3>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xl font-extrabold text-slate-900">49 990 ₽</span>
-                        <span class="text-yellow-500 text-sm font-bold">★ 4.9</span>
+                    <div class="flex items-center justify-between my-2">
+                        <span class="text-base md:text-xl font-black text-slate-900">49 990 ₽</span>
+                        <span class="text-yellow-500 text-xs md:text-sm font-bold">★ 4.9</span>
                     </div>
-                    <a href="https://market.yandex.ru" target="_blank" rel="sponsored nofollow" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-xl font-medium transition shadow-sm">Смотреть на Маркете</a>
+                    <a href="https://market.yandex.ru" target="_blank" rel="sponsored nofollow" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2.5 rounded-xl text-xs md:text-sm font-bold transition shadow-sm">На Маркет</a>
                 </div>
             </div>
 
-            <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+            <!-- Товар 2 -->
+            <div class="bg-white rounded-2xl border border-slate-200 p-3 md:p-4 shadow-sm hover:shadow-md transition flex flex-col justify-between">
                 <div>
-                    <div class="bg-slate-100 h-48 rounded-xl mb-4 flex items-center justify-center text-slate-400 font-medium">Aurora X15</div>
-                    <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Смартфоны</span>
-                    <h3 class="font-semibold text-lg mt-2 mb-1 text-slate-800">Aurora X15 Pro 256 ГБ</h3>
-                    <p class="text-slate-500 text-sm mb-4">Флагманский смартфон с крутой камерой и высокой автономностью.</p>
+                    <div class="bg-slate-100 h-36 md:h-48 rounded-xl mb-3 overflow-hidden flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80" alt="Aurora X15" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[10px] md:text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Смартфоны</span>
+                    <h3 class="font-bold text-sm md:text-base mt-2 mb-1 text-slate-800 line-clamp-2">Aurora X15 Pro 256GB</h3>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xl font-extrabold text-slate-900">79 990 ₽</span>
-                        <span class="text-yellow-500 text-sm font-bold">★ 4.8</span>
+                    <div class="flex items-center justify-between my-2">
+                        <span class="text-base md:text-xl font-black text-slate-900">79 990 ₽</span>
+                        <span class="text-yellow-500 text-xs md:text-sm font-bold">★ 4.8</span>
                     </div>
-                    <a href="https://market.yandex.ru" target="_blank" rel="sponsored nofollow" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-xl font-medium transition shadow-sm">Смотреть на Маркете</a>
+                    <a href="https://market.yandex.ru" target="_blank" rel="sponsored nofollow" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2.5 rounded-xl text-xs md:text-sm font-bold transition shadow-sm">На Маркет</a>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer class="bg-white border-t border-slate-200 mt-20 py-8 text-center text-sm text-slate-500">
-        <p>© 2026 ТехноСтейк (technosteak.ru). Все права защищены. Партнерский проект Яндекс Дистрибуции.</p>
+    <!-- Футер -->
+    <footer class="bg-white border-t border-slate-200 mt-16 py-6 text-center text-xs text-slate-400">
+        <p>© 2026 ТехноСтейк (technosteak.ru). Яндекс Дистрибуция.</p>
     </footer>
 </body>
 </html>
