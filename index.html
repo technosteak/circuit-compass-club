@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ТехноСтейк — Каталог техники и обзоры</title>
+    <title>ТехноСтейк — Каталог техники, обзоры и цены</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans antialiased">
@@ -12,68 +12,118 @@
         <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <span class="text-xl font-black bg-blue-600 text-white px-3.5 py-1.5 rounded-xl shadow-sm">ТС</span>
-                <span class="text-xl font-bold tracking-tight text-slate-900">ТехноСтейк</span>
+                <span class="text-xl font-bold tracking-tight">ТехноСтейк</span>
             </div>
-            <div class="flex items-center space-x-2">
-                <span class="text-xs bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1.5 rounded-full font-semibold">Live Каталог</span>
+            <div class="flex items-center space-x-3">
+                <span class="text-xs bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1.5 rounded-full font-semibold hidden sm:inline">Яндекс Маркет Партнер</span>
+                <span class="text-xs bg-blue-50 text-blue-700 border border-blue-200 px-3 py-1.5 rounded-full font-semibold">Live v2.0</span>
             </div>
         </div>
     </header>
 
-    <!-- Основной контент -->
+    <!-- Главный контейнер -->
     <main class="max-w-7xl mx-auto px-4 py-6">
         <!-- Баннер -->
-        <div class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-6 md:p-10 text-white mb-8 shadow-xl relative overflow-hidden">
+        <div class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 rounded-3xl p-6 md:p-10 text-white mb-8 shadow-xl relative overflow-hidden">
             <div class="relative z-10">
-                <h1 class="text-2xl md:text-4xl font-black mb-3 tracking-tight">Техника с умом и честными обзорами</h1>
-                <p class="text-blue-100 max-w-xl text-sm md:text-base leading-relaxed">Лучшие предложения, актуальные цены и прямые партнерские ссылки на Яндекс Маркет.</p>
+                <h1 class="text-2xl md:text-4xl font-black mb-3 tracking-tight">Выбирайте технику с умом, а не наугад</h1>
+                <p class="text-blue-100 max-w-xl text-sm md:text-base leading-relaxed mb-6">Актуальные тренды, честные видеообзоры и прямые партнерские ссылки на лучшие предложения маркетплейса.</p>
+                <!-- Поиск -->
+                <div class="max-w-md">
+                    <input type="text" id="searchInput" placeholder="Поиск по технике, брендам, моделям..." class="w-full px-4 py-3 rounded-2xl text-slate-900 bg-white/95 backdrop-blur placeholder-slate-400 text-sm focus:outline-none focus:ring-4 focus:ring-blue-400/50 shadow-lg">
+                </div>
             </div>
         </div>
 
-        <!-- Сетка товаров -->
-        <h2 class="text-xl font-bold mb-4 text-slate-800">Популярные товары</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
-            <!-- Товар 1 -->
-            <div class="bg-white rounded-2xl border border-slate-200 p-3 md:p-4 shadow-sm hover:shadow-md transition flex flex-col justify-between">
-                <div>
-                    <div class="bg-slate-100 h-36 md:h-48 rounded-xl mb-3 overflow-hidden flex items-center justify-center">
-                        <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=500&q=80" alt="PlayBox 5" class="w-full h-full object-cover">
-                    </div>
-                    <span class="text-[10px] md:text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Игры</span>
-                    <h3 class="font-bold text-sm md:text-base mt-2 mb-1 text-slate-800 line-clamp-2">PlayBox 5 Digital Edition</h3>
-                </div>
-                <div>
-                    <div class="flex items-center justify-between my-2">
-                        <span class="text-base md:text-xl font-black text-slate-900">49 990 ₽</span>
-                        <span class="text-yellow-500 text-xs md:text-sm font-bold">★ 4.9</span>
-                    </div>
-                    <a href="https://market.yandex.ru" target="_blank" rel="sponsored nofollow" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2.5 rounded-xl text-xs md:text-sm font-bold transition shadow-sm">На Маркет</a>
-                </div>
-            </div>
+        <!-- Категории -->
+        <div class="flex items-center space-x-2 overflow-x-auto pb-4 mb-6 no-scrollbar" id="categoryFilters">
+            <button onclick="filterCategory('all')" class="cat-btn px-4 py-2 rounded-xl text-xs md:text-sm font-bold bg-blue-600 text-white transition shadow-sm whitespace-nowrap">Все товары</button>
+            <button onclick="filterCategory('Смартфоны')" class="cat-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition whitespace-nowrap">Смартфоны</button>
+            <button onclick="filterCategory('Игры')" class="cat-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition whitespace-nowrap">Игры и консоли</button>
+            <button onclick="filterCategory('Аудио')" class="cat-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition whitespace-nowrap">Аудио</button>
+            <button onclick="filterCategory('Умный дом')" class="cat-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition whitespace-nowrap">Умный дом</button>
+        </div>
 
-            <!-- Товар 2 -->
-            <div class="bg-white rounded-2xl border border-slate-200 p-3 md:p-4 shadow-sm hover:shadow-md transition flex flex-col justify-between">
-                <div>
-                    <div class="bg-slate-100 h-36 md:h-48 rounded-xl mb-3 overflow-hidden flex items-center justify-center">
-                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80" alt="Aurora X15" class="w-full h-full object-cover">
-                    </div>
-                    <span class="text-[10px] md:text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Смартфоны</span>
-                    <h3 class="font-bold text-sm md:text-base mt-2 mb-1 text-slate-800 line-clamp-2">Aurora X15 Pro 256GB</h3>
-                </div>
-                <div>
-                    <div class="flex items-center justify-between my-2">
-                        <span class="text-base md:text-xl font-black text-slate-900">79 990 ₽</span>
-                        <span class="text-yellow-500 text-xs md:text-sm font-bold">★ 4.8</span>
-                    </div>
-                    <a href="https://market.yandex.ru" target="_blank" rel="sponsored nofollow" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2.5 rounded-xl text-xs md:text-sm font-bold transition shadow-sm">На Маркет</a>
-                </div>
-            </div>
+        <!-- Сетка товаров -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6" id="productsGrid">
+            <!-- Сюда динамически рендерятся карточки -->
         </div>
     </main>
 
     <!-- Футер -->
-    <footer class="bg-white border-t border-slate-200 mt-16 py-6 text-center text-xs text-slate-400">
-        <p>© 2026 ТехноСтейк (technosteak.ru). Яндекс Дистрибуция.</p>
+    <footer class="bg-white border-t border-slate-200 mt-20 py-8 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="mb-2 font-medium text-slate-700">ТехноСтейк (technosteak.ru) — Ваш надежный гид в мире техники.</p>
+            <p>© 2026 Все права защищены. Информация о товарах носит ознакомительный характер.</p>
+        </div>
     </footer>
+
+    <!-- Скрипт каталога -->
+    <script>
+        const products = [
+            { id: 1, title: "PlayBox 5 Digital Edition", category: "Игры", price: "49 990 ₽", rating: "4.9", image: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=500&q=80", desc: "Мощная игровая консоль нового поколения с поддержкой трассировки лучей и высокой скоростью загрузки игр." },
+            { id: 2, title: "Aurora X15 Pro 256GB", category: "Смартфоны", price: "79 990 ₽", rating: "4.8", image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80", desc: "Флагманский смартфон с великолепным экраном, топовой камерой и превосходной автономностью." },
+            { id: 3, title: "SonicWave ANC Headphones", category: "Аудио", price: "14 990 ₽", rating: "4.7", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80", desc: "Полноразмерные беспроводные наушники с активным шумоподавлением и чистейшим басом." },
+            { id: 4, title: "SmartHome Hub Yandex", category: "Умный дом", price: "4 990 ₽", rating: "4.9", image: "https://images.unsplash.com/photo-1558089687-f282ffcbc126?auto=format&fit=crop&w=500&q=80", desc: "Центр управления умным домом с поддержкой голосового ассистента и быстрой интеграцией." },
+            { id: 5, title: "UltraBook Pro 14 OLED", category: "Смартфоны", price: "99 990 ₽", rating: "4.9", image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80", desc: "Легкий и мощный ультрабук с потрясающим OLED-экраном для работы и творчества." },
+            { id: 6, title: "CyberPhone 14 Ultra", category: "Смартфоны", price: "89 990 ₽", rating: "4.6", image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=500&q=80", desc: "Инновационный гаджет с передовым процессором и расширенными возможностями фотосъемки." }
+        ];
+
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        function renderProducts() {
+            const grid = document.getElementById('productsGrid');
+            const filtered = products.filter(p => {
+                const matchesCat = currentCategory === 'all' || p.category === currentCategory;
+                const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) || p.desc.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesCat && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '<div class="col-span-full py-12 text-center text-slate-400 font-medium">Ничего не найдено по вашему запросу</div>';
+                return;
+            }
+
+            grid.innerHTML = filtered.map(item => `
+                <div class="bg-white rounded-2xl border border-slate-200 p-3 md:p-4 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="bg-slate-100 h-36 md:h-48 rounded-xl mb-3 overflow-hidden flex items-center justify-center">
+                            <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-[10px] md:text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">${item.category}</span>
+                        <h3 class="font-bold text-sm md:text-base mt-2 mb-1 text-slate-800 line-clamp-2">${item.title}</h3>
+                        <p class="text-slate-500 text-xs md:text-sm line-clamp-2 mb-3">${item.desc}</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-base md:text-xl font-black text-slate-900">${item.price}</span>
+                            <span class="text-yellow-500 text-xs md:text-sm font-bold">★ ${item.rating}</span>
+                        </div>
+                        <a href="https://market.yandex.ru" target="_blank" rel="sponsored nofollow" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2.5 rounded-xl text-xs md:text-sm font-bold transition shadow-sm">Смотреть на Маркете</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                if (btn.textContent.includes(cat) || (cat === 'all' && btn.textContent.includes('Все'))) {
+                    btn.className = "cat-btn px-4 py-2 rounded-xl text-xs md:text-sm font-bold bg-blue-600 text-white transition shadow-sm whitespace-nowrap";
+                } else {
+                    btn.className = "cat-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition whitespace-nowrap";
+                }
+            });
+            renderProducts();
+        }
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderProducts();
+        });
+
+        renderProducts();
+    </script>
 </body>
 </html>
