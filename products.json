@@ -1,22 +1,76 @@
 {
-    "updated_at": "2026-10-14T22:13:33.236061",
+    "updated_at": "2026-10-14T22:16:55.420761",
     "products": [
+        {
+            "id": 4,
+            "title": "SmartHome Hub Yandex",
+            "slug": "smarthome-hub-yandex",
+            "category": "Умный дом",
+            "price": 4990,
+            "price_formatted": "4 990 ₽",
+            "rating": 4.9,
+            "image": "https://images.unsplash.com/photo-1558089687-f282ffcbc126?auto=format&fit=crop&w=500&q=80",
+            "desc": "Центр управления умным домом с поддержкой голосового ассистента и быстрой интеграцией устройств.",
+            "market_link": "https://market.yandex.ru"
+        },
         {
             "id": 1,
             "title": "PlayBox 5 Digital Edition",
+            "slug": "playbox-5-digital",
             "category": "Игры",
-            "price": "49 990 ₽",
-            "rating": "4.9",
+            "price": 49990,
+            "price_formatted": "49 990 ₽",
+            "rating": 4.9,
             "image": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=500&q=80",
+            "desc": "Мощная игровая консоль нового поколения с поддержкой трассировки лучей и сверхбыстрым SSD.",
+            "market_link": "https://market.yandex.ru"
+        },
+        {
+            "id": 5,
+            "title": "UltraBook Pro 14 OLED",
+            "slug": "ultrabook-pro-14",
+            "category": "Смартфоны",
+            "price": 99990,
+            "price_formatted": "99 990 ₽",
+            "rating": 4.9,
+            "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80",
+            "desc": "Легкий и мощный ультрабук с потрясающим экраном для работы, графики и творчества.",
             "market_link": "https://market.yandex.ru"
         },
         {
             "id": 2,
             "title": "Aurora X15 Pro 256GB",
+            "slug": "aurora-x15-pro",
             "category": "Смартфоны",
-            "price": "79 990 ₽",
-            "rating": "4.8",
+            "price": 79990,
+            "price_formatted": "79 990 ₽",
+            "rating": 4.8,
             "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80",
+            "desc": "Флагманский смартфон с великолепным OLED-экраном, топовой камерой и превосходной автономностью.",
+            "market_link": "https://market.yandex.ru"
+        },
+        {
+            "id": 3,
+            "title": "SonicWave ANC Headphones",
+            "slug": "sonicwave-anc",
+            "category": "Аудио",
+            "price": 14990,
+            "price_formatted": "14 990 ₽",
+            "rating": 4.7,
+            "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80",
+            "desc": "Полноразмерные беспроводные наушники с активным шумоподавлением и чистейшим басом.",
+            "market_link": "https://market.yandex.ru"
+        },
+        {
+            "id": 6,
+            "title": "CyberPhone 14 Ultra",
+            "slug": "cyberphone-14-ultra",
+            "category": "Смартфоны",
+            "price": 89990,
+            "price_formatted": "89 990 ₽",
+            "rating": 4.6,
+            "image": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=500&q=80",
+            "desc": "Инновационный гаджет с передовым процессором и расширенными возможностями фотосъемки.",
             "market_link": "https://market.yandex.ru"
         }
     ]
