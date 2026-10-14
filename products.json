@@ -1,0 +1,14 @@
+{
+    "updated_at": "2026-10-14T21:31:08.779411",
+    "products": [
+        {
+            "id": 1,
+            "title": "PlayBox 5 Digital Edition",
+            "category": "Игры",
+            "price": "49 990 ₽",
+            "rating": "4.9",
+            "image": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=500&q=80",
+            "market_link": "https://market.yandex.ru"
+        }
+    ]
+}
