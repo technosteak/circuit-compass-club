@@ -11,57 +11,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://technosteak.ru/product/macbook-air-13-m2/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://technosteak.ru/product/smarthome-hub-yandex/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://technosteak.ru/product/jbl-charge-5/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://technosteak.ru/product/sony-wh-1000xm5/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://technosteak.ru/product/playbox-5-digital/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://technosteak.ru/product/dyson-v15-detect/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://technosteak.ru/product/ipad-pro-11-m4/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://technosteak.ru/product/ultrabook-pro-14/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://technosteak.ru/product/nintendo-switch-oled/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://technosteak.ru/product/marshall-stanmore-3/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://technosteak.ru/product/xbox-series-x/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
@@ -72,21 +22,6 @@
   </url>
   <url>
     <loc>https://technosteak.ru/product/sonicwave-anc/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://technosteak.ru/product/robot-vacuum-s10/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://technosteak.ru/product/smart-led-strip/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://technosteak.ru/product/cyberphone-14-ultra/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
