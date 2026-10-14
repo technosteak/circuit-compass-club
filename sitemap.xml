@@ -16,12 +16,22 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://technosteak.ru/product/xbox-series-x/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://technosteak.ru/product/aurora-x15-pro/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://technosteak.ru/product/sonicwave-anc/</loc>
+    <loc>https://technosteak.ru/versus/playbox-5-digital-vs-xbox-series-x/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://technosteak.ru/versus/xbox-series-x-vs-playbox-5-digital/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
