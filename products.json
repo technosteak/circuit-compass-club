@@ -1,34 +1,34 @@
 {
-    "updated_at": "2026-10-14T22:41:56.947630",
+    "updated_at": "2026-10-14T23:00:01.305622",
     "products": [
         {
             "id": 1,
             "title": "PlayBox 5 Digital Edition",
             "slug": "playbox-5-digital",
             "category": "Игры",
+            "is_juicy_discount": true,
+            "discount_percent": 25,
             "price": 49990,
             "price_formatted": "49 990 ₽",
-            "old_price_formatted": "54 990 ₽",
-            "price_status": "Исторический минимум (-9%)",
+            "old_price_formatted": "66 500 ₽",
+            "price_status": "🔥 СОЧНАЯ СКИДКА -25%",
             "rating": 4.9,
             "image": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=500&q=80",
-            "badge": "Хит продаж",
+            "badge": "🔥 -25% СКИДКА",
             "video_type": "rutube",
             "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
-            "desc": "Мощная игровая консоль нового поколения с поддержкой 4K, трассировки лучей и сверхбыстрым SSD.",
+            "desc": "Мощная игровая консоль нового поколения с поддержкой 4K, трассировки лучей и SSD.",
             "verdict_plus": [
-                "Мгновенная загрузка игр благодаря NVMe SSD",
-                "Тихая система охлаждения",
-                "Потрясающая отдача геймпада DualSense"
+                "Мгновенная загрузка",
+                "Тихое охлаждение",
+                "Отдача DualSense"
             ],
             "verdict_minus": [
-                "Крупные габариты корпуса",
-                "Быстро забивается память под новые игры"
+                "Крупные габариты"
             ],
             "cross_sell": [
-                "Второй геймпад DualSense",
-                "Зарядная станция",
-                "Подписка PlayStation Plus 12 мес"
+                "Второй геймпад",
+                "Зарядка"
             ],
             "versus_target": "xbox-series-x",
             "versus_title": "Xbox Series X 1TB",
@@ -37,8 +37,8 @@
                     "author": "Артем К.",
                     "rating": 5,
                     "date": "12 октября 2026",
-                    "text": "Брал ради эксклюзивов. Графика просто космос, загрузок вообще нет.",
-                    "plus": "Скорость, геймпад",
+                    "text": "Взял по акции со скидкой, огонь!",
+                    "plus": "Скорость",
                     "minus": "Размер"
                 }
             ],
@@ -46,41 +46,42 @@
         },
         {
             "id": 2,
-            "title": "Xbox Series X 1TB",
-            "slug": "xbox-series-x",
-            "category": "Игры",
-            "price": 48990,
-            "price_formatted": "48 990 ₽",
-            "old_price_formatted": "52 990 ₽",
-            "price_status": "Лучшая цена за 3 месяца",
+            "title": "SonicWave ANC Headphones",
+            "slug": "sonicwave-anc",
+            "category": "Аудио",
+            "is_juicy_discount": true,
+            "discount_percent": 30,
+            "price": 13990,
+            "price_formatted": "13 990 ₽",
+            "old_price_formatted": "19 990 ₽",
+            "price_status": "🔥 СОЧНАЯ СКИДКА -30%",
             "rating": 4.8,
-            "image": "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?auto=format&fit=crop&w=500&q=80",
-            "badge": "Хит",
+            "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80",
+            "badge": "🔥 -30% СКИДКА",
             "video_type": "rutube",
             "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
-            "desc": "Самая быстрая и мощная консоль Xbox с нативным разрешением 4K и подпиской Game Pass.",
+            "desc": "Беспроводные наушники с активным шумоподавлением и басом.",
             "verdict_plus": [
-                "Обратная совместимость",
-                "Тихая работа",
-                "Удобная подписка Game Pass"
+                "Шумодав",
+                "Автономность 35ч"
             ],
             "verdict_minus": [
-                "Мало эксклюзивов на старте"
+                "Чехол крупный"
             ],
             "cross_sell": [
-                "Аккумулятор для геймпада",
-                "Беспроводная гарнитура Xbox"
+                "Кабель AUX",
+                "Адаптер"
             ],
-            "versus_target": "playbox-5-digital",
-            "versus_title": "PlayBox 5 Digital",
+            "versus_target": "",
+            "versus_title": "",
             "reviews": [
                 {
-                    "author": "Игорь М.",
+                    "author": "Елена П.",
                     "rating": 5,
                     "date": "10 октября 2026",
-                    "text": "Game Pass полностью окупает консоль. Мощная и тихая.",
-                    "plus": "Производительность",
-                    "minus": "Дизайн колонка"
+                    "text": "Супер цена со скидкой!",
+                    "plus": "Звук",
+                    "minus": "Чехол"
                 }
             ],
             "market_link": "https://market.yandex.ru"
@@ -90,6 +91,8 @@
             "title": "Aurora X15 Pro 256GB",
             "slug": "aurora-x15-pro",
             "category": "Смартфоны",
+            "is_juicy_discount": false,
+            "discount_percent": 0,
             "price": 79990,
             "price_formatted": "79 990 ₽",
             "old_price_formatted": "85 990 ₽",
@@ -99,19 +102,17 @@
             "badge": "Рекомендуем",
             "video_type": "vk",
             "video_id": "-228965804_456239018",
-            "desc": "Флагманский смартфон с 120 Гц AMOLED-экраном, топовым процессором и ночной съемкой.",
+            "desc": "Флагманский смартфон с 120 Гц AMOLED-экраном и ночной съемкой.",
             "verdict_plus": [
-                "Сочный AMOLED экран 120 Гц",
-                "Превосходная ночная съемка",
-                "Зарядка 120 Вт в комплекте"
+                "AMOLED 120Гц",
+                "Зарядка 120Вт"
             ],
             "verdict_minus": [
-                "Нет слота под microSD"
+                "Нет microSD"
             ],
             "cross_sell": [
-                "Защитное стекло 9H",
-                "Чехол MagSafe",
-                "Быстрая беспроводная зарядка"
+                "Стекло 9H",
+                "Чехол"
             ],
             "versus_target": "",
             "versus_title": "",
@@ -120,9 +121,9 @@
                     "author": "Сергей В.",
                     "rating": 5,
                     "date": "14 октября 2026",
-                    "text": "Экран бомба, на солнце все видно. Камера снимает четко.",
-                    "plus": "Зарядка 15 минут",
-                    "minus": "Греется в играх"
+                    "text": "Камера отличная",
+                    "plus": "Зарядка",
+                    "minus": "Греется"
                 }
             ],
             "market_link": "https://market.yandex.ru"

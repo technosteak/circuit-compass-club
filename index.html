@@ -3,36 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ТехноСтейк — Честные обзоры, сравнения и подбор техники</title>
-    <meta name="description" content="Независимый экспертный гид по технике. Умный подбор устройств, динамика цен и честные отзывы.">
+    <title>ТехноСтейк — Сочные скидки и независимый выбор техники</title>
+    <meta name="description" content="Каталог товаров с максимальными скидками. Честные обзоры, подбор техники и акции на Яндекс Маркете.">
     <meta name="yandex-verification" content="hlxuv94aba53ntlh" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans antialiased">
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-            <a href="/" class="flex items-center space-x-2"><span class="text-lg font-black bg-blue-600 text-white px-3 py-1 rounded-xl">ТС</span><span class="text-lg font-bold">ТехноСтейк</span></a>
-            <span class="text-[11px] bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-1 rounded-full font-semibold">Яндекс Партнер</span>
+            <a href="/" class="flex items-center space-x-2"><span class="text-lg font-black bg-rose-600 text-white px-3 py-1 rounded-xl shadow-sm">ТС</span><span class="text-lg font-bold">ТехноСтейк</span></a>
+            <span class="text-[11px] bg-rose-50 text-rose-700 border border-rose-200 px-2.5 py-1 rounded-full font-bold">🔥 Распродажа</span>
         </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-4 py-6">
-        <!-- AI КВИЗ И БАННЕР -->
-        <div class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 rounded-3xl p-6 md:p-10 text-white mb-8 shadow-xl">
+        <div class="bg-gradient-to-r from-rose-600 via-red-600 to-orange-600 rounded-3xl p-6 md:p-10 text-white mb-6 shadow-xl">
             <div class="max-w-2xl">
-                <span class="text-xs bg-white/20 text-white font-bold px-3 py-1 rounded-full uppercase tracking-widest">AI Помощник 2026</span>
-                <h1 class="text-2xl md:text-4xl font-black mt-3 mb-3">Не знаете, что выбрать? Подберем за 10 секунд!</h1>
-                <p class="text-blue-100 text-sm mb-6">Укажите категорию и бюджет, а мы подберем лучшее устройство с честным рейтингом.</p>
-                
-                <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl flex flex-col md:flex-row gap-3">
-                    <select id="quizBudget" class="bg-white text-slate-900 text-xs font-bold rounded-xl px-3 py-2.5 focus:outline-none">
-                        <option value="all">Любой бюджет</option>
-                        <option value="50000">До 50 000 ₽</option>
-                        <option value="100000">До 100 000 ₽</option>
-                    </select>
-                    <button onclick="runQuiz()" class="bg-amber-400 hover:bg-amber-300 text-slate-900 font-black text-xs px-5 py-2.5 rounded-xl transition shadow-md">✨ Подобрать идеальное устройство</button>
-                </div>
+                <span class="text-xs bg-white/20 text-white font-bold px-3 py-1 rounded-full uppercase tracking-widest">Максимальный дисконт</span>
+                <h1 class="text-2xl md:text-4xl font-black mt-3 mb-2">🔥 Сочные скидки дня</h1>
+                <p class="text-rose-100 text-sm">Самые глубокие скидки на популярные гаджеты с прямой выгодой до 30%.</p>
             </div>
+        </div>
+
+        <!-- Категории -->
+        <div class="flex items-center space-x-2 overflow-x-auto pb-4 no-scrollbar">
+            <button onclick="filterCategory('juicy')" class="cat-btn px-4 py-2.5 rounded-xl text-xs md:text-sm font-black bg-rose-600 text-white transition shadow-sm whitespace-nowrap">🔥 Сочные скидки</button>
+            <button onclick="filterCategory('all')" class="cat-btn px-4 py-2.5 rounded-xl text-xs md:text-sm font-semibold bg-white border border-slate-200 text-slate-700 transition whitespace-nowrap">Все товары</button>
+            <button onclick="filterCategory('Смартфоны')" class="cat-btn px-4 py-2.5 rounded-xl text-xs md:text-sm font-semibold bg-white border border-slate-200 text-slate-700 transition whitespace-nowrap">Смартфоны</button>
+            <button onclick="filterCategory('Игры')" class="cat-btn px-4 py-2.5 rounded-xl text-xs md:text-sm font-semibold bg-white border border-slate-200 text-slate-700 transition whitespace-nowrap">Игры</button>
+            <button onclick="filterCategory('Аудио')" class="cat-btn px-4 py-2.5 rounded-xl text-xs md:text-sm font-semibold bg-white border border-slate-200 text-slate-700 transition whitespace-nowrap">Аудио</button>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="productsGrid"></div>
@@ -40,38 +39,44 @@
 
     <script>
         let products = [];
+        let currentCat = 'juicy';
+
         async function loadProducts() {
             const res = await fetch('products.json?' + new Date().getTime());
             const data = await res.json();
             products = data.products || [];
-            renderProducts(products);
+            renderProducts();
         }
 
-        function runQuiz() {
-            const maxB = document.getElementById('quizBudget').value;
-            let filtered = products;
-            if (maxB !== 'all') {
-                filtered = products.filter(p => p.price <= parseInt(maxB));
-            }
-            renderProducts(filtered);
+        function filterCategory(cat) {
+            currentCat = cat;
+            renderProducts();
         }
 
-        function renderProducts(list) {
+        function renderProducts() {
             const grid = document.getElementById('productsGrid');
+            let list = products;
+            if (currentCat === 'juicy') {
+                list = products.filter(p => p.is_juicy_discount);
+            } else if (currentCat !== 'all') {
+                list = products.filter(p => p.category === currentCat);
+            }
+
             grid.innerHTML = list.map(item => `
                 <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm hover:shadow-md transition flex flex-col justify-between">
                     <div>
                         <a href="product/${item.slug}/" class="block bg-slate-100 h-40 rounded-xl mb-3 overflow-hidden relative">
                             <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
+                            ${item.is_juicy_discount ? `<span class="absolute top-2 left-2 bg-rose-600 text-white text-[10px] font-black px-2 py-0.5 rounded-md shadow-sm">-${item.discount_percent}%</span>` : ''}
                             <span class="absolute top-2 right-2 bg-slate-900/80 text-white text-[10px] font-bold px-2 py-0.5 rounded-md">★ ${item.rating}</span>
                         </a>
                         <span class="text-[10px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-md">${item.category}</span>
-                        <a href="product/${item.slug}/" class="block font-bold text-sm mt-2 mb-1 text-slate-800 line-clamp-2 hover:text-blue-600">${item.title}</a>
-                        <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md block w-fit mb-3">${item.price_status || 'Отличная цена'}</span>
+                        <a href="product/${item.slug}/" class="block font-bold text-sm mt-2 mb-1 text-slate-800 line-clamp-2 hover:text-rose-600">${item.title}</a>
                     </div>
                     <div>
-                        <div class="text-lg font-black text-slate-900 mb-2">${item.price_formatted}</div>
-                        <a href="${item.market_link}" target="_blank" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2.5 rounded-xl text-xs font-bold">Смотреть на Маркете</a>
+                        <div class="text-xs line-through text-slate-400 font-medium">${item.old_price_formatted || ''}</div>
+                        <div class="text-lg font-black text-rose-600 mb-2">${item.price_formatted}</div>
+                        <a href="${item.market_link}" target="_blank" class="block w-full bg-rose-600 hover:bg-rose-700 text-white text-center py-2.5 rounded-xl text-xs font-bold transition shadow-sm">Купить со скидкой</a>
                     </div>
                 </div>
             `).join('');
