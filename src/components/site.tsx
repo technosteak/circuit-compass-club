@@ -98,7 +98,7 @@ export function Header() {
               ))}
             </div>
             <div className="border-t border-border pt-4">
-              {[["/favorites", "Избранное"], ["/about", "О проекте"], ["/contacts", "Контакты"], ["/privacy", "Политика конфиденциальности"]].map(([to, l]) => (
+              {([["/favorites", "Избранное"], ["/about", "О проекте"], ["/contacts", "Контакты"], ["/privacy", "Политика конфиденциальности"]] as const).map(([to, l]) => (
                 <Link key={to} to={to} onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-muted">{l}</Link>
               ))}
             </div>
