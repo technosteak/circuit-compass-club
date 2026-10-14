@@ -65,7 +65,7 @@ function Index() {
 
       <section className="container-site mt-10 grid grid-cols-2 gap-3 sm:grid-cols-5">
         {CATS.map((c, i) => {
-          const I = ICONS[i];
+          const I = ICONS[i] ?? Smartphone;
           return (
             <Link key={c.slug} to="/category/$slug" params={{ slug: c.slug }}
               className="card-lift flex flex-col items-center gap-2 rounded-2xl border border-border bg-card p-5 text-center font-semibold">

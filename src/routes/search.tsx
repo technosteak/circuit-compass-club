@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Grid, GridSkeleton, useProducts } from "@/components/site";
 
 export const Route = createFileRoute("/search")({
-  validateSearch: (s: Record<string, unknown>) => ({ q: typeof s.q === "string" ? s.q : "" }),
+  validateSearch: (s: Record<string, unknown>) => ({ q: typeof s["q"] === "string" ? (s["q"] as string) : "" }),
   head: () => ({
     meta: [
       { title: "Поиск по каталогу | ТехноСтейк" },
