@@ -92,13 +92,10 @@ def save_and_build():
         json.dump({"updated_at": datetime.now().isoformat(), "products": products}, f, ensure_ascii=False, indent=4)
 
     product_dir = os.path.join(REPO_DIR, "product")
-    versus_dir = os.path.join(REPO_DIR, "versus")
     os.makedirs(product_dir, exist_ok=True)
-    os.makedirs(versus_dir, exist_ok=True)
-
     sitemap_urls = ["https://technosteak.ru/", "https://technosteak.ru/products.json"]
 
-    # 1. ГЕНЕРАЦИЯ СТРАНИЦ ТОВАРОВ
+    # 1. СТРАНИЦЫ ТОВАРОВ С КНОПКОЙ ТЕЛЕГРАМ
     for p in products:
         p_folder = os.path.join(product_dir, p["slug"])
         os.makedirs(p_folder, exist_ok=True)
@@ -120,7 +117,9 @@ def save_and_build():
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
             <a href="/" class="flex items-center space-x-2"><span class="text-lg font-black bg-blue-600 text-white px-3 py-1 rounded-xl">ТС</span><span class="text-lg font-bold">ТехноСтейк</span></a>
-            <a href="/" class="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1.5 rounded-xl">← В каталог</a>
+            <a href="https://t.me/technosteak" target="_blank" class="text-xs font-bold text-white bg-blue-500 hover:bg-blue-600 px-3.5 py-2 rounded-xl transition flex items-center space-x-1.5 shadow-sm">
+                <span>✈️ Наш Telegram</span>
+            </a>
         </div>
     </header>
 
@@ -147,7 +146,8 @@ def save_and_build():
                         </div>
                         <div class="text-2xl font-black text-rose-600">{p['price_formatted']}</div>
                     </div>
-                    <a href="{p['market_link']}" target="_blank" class="block w-full bg-rose-600 hover:bg-rose-700 text-white text-center py-3.5 rounded-2xl font-bold transition shadow-md">Забрать со скидкой на Маркете</a>
+                    <a href="{p['market_link']}" target="_blank" class="block w-full bg-rose-600 hover:bg-rose-700 text-white text-center py-3.5 rounded-2xl font-bold transition shadow-md mb-3">Забрать со скидкой на Маркете</a>
+                    <a href="https://t.me/technosteak" target="_blank" class="block w-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-center py-2.5 rounded-2xl font-bold text-xs transition">📢 Получать скидки дня в Telegram</a>
                 </div>
             </div>
         </div>
@@ -157,7 +157,7 @@ def save_and_build():
         with open(os.path.join(p_folder, "index.html"), "w", encoding="utf-8") as f:
             f.write(p_html)
 
-    # 2. ГЛАВНАЯ СТРАНИЦА С ФИЛЬТРОМ «СОЧНЫЕ СКИДКИ»
+    # 2. ГЛАВНАЯ СТРАНИЦА С БАННЕРОМ И КНОПКОЙ ТЕЛЕГРАМ
     index_html = """<!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -172,16 +172,21 @@ def save_and_build():
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
             <a href="/" class="flex items-center space-x-2"><span class="text-lg font-black bg-rose-600 text-white px-3 py-1 rounded-xl shadow-sm">ТС</span><span class="text-lg font-bold">ТехноСтейк</span></a>
-            <span class="text-[11px] bg-rose-50 text-rose-700 border border-rose-200 px-2.5 py-1 rounded-full font-bold">🔥 Распродажа</span>
+            <a href="https://t.me/technosteak" target="_blank" class="text-xs font-bold text-white bg-blue-500 hover:bg-blue-600 px-3.5 py-2 rounded-xl transition flex items-center space-x-1.5 shadow-sm">
+                <span>✈️ Канал в Telegram</span>
+            </a>
         </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-4 py-6">
-        <div class="bg-gradient-to-r from-rose-600 via-red-600 to-orange-600 rounded-3xl p-6 md:p-10 text-white mb-6 shadow-xl">
-            <div class="max-w-2xl">
+        <div class="bg-gradient-to-r from-rose-600 via-red-600 to-orange-600 rounded-3xl p-6 md:p-10 text-white mb-6 shadow-xl relative overflow-hidden flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div class="max-w-2xl relative z-10">
                 <span class="text-xs bg-white/20 text-white font-bold px-3 py-1 rounded-full uppercase tracking-widest">Максимальный дисконт</span>
                 <h1 class="text-2xl md:text-4xl font-black mt-3 mb-2">🔥 Сочные скидки дня</h1>
-                <p class="text-rose-100 text-sm">Самые глубокие скидки на популярные гаджеты с прямой выгодой до 30%.</p>
+                <p class="text-rose-100 text-sm mb-4">Самые глубокие скидки на популярные гаджеты с прямой выгодой до 30%.</p>
+                <a href="https://t.me/technosteak" target="_blank" class="inline-flex items-center space-x-2 bg-white text-rose-600 px-4 py-2.5 rounded-xl font-black text-xs hover:bg-rose-50 transition shadow-md">
+                    <span>🔥 Подписаться на закрытые скидки в Telegram →</span>
+                </a>
             </div>
         </div>
 
@@ -248,7 +253,7 @@ def save_and_build():
     with open(os.path.join(REPO_DIR, "index.html"), "w", encoding="utf-8") as f:
         f.write(index_html)
 
-    # Sitemap
+    # Sitemap и CNAME
     sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for url in sitemap_urls:
         sitemap_xml += f'  <url>\n    <loc>{url}</loc>\n    <changefreq>daily</changefreq>\n    <priority>0.8</priority>\n  </url>\n'
@@ -261,9 +266,9 @@ def save_and_build():
 
     os.chdir(REPO_DIR)
     subprocess.run(["git", "add", "."])
-    subprocess.run(["git", "commit", "-m", "Add Juicy Discounts category and badges [skip ci]"])
+    subprocess.run(["git", "commit", "-m", "Add Telegram channel buttons and cross-links [skip ci]"])
     subprocess.run(["git", "push", "origin", "main"])
-    print("Juicy Discounts category updated!")
+    print("Site updated with Telegram integration!")
 
 if __name__ == "__main__":
     save_and_build()
