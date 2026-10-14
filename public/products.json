@@ -1,0 +1,122 @@
+{
+  "updated": "2026-10-14",
+  "categories": [
+    { "slug": "smartphones", "name": "Смартфоны" },
+    { "slug": "laptops", "name": "Ноутбуки" },
+    { "slug": "games", "name": "Игры" },
+    { "slug": "smart-home", "name": "Умный дом" },
+    { "slug": "audio", "name": "Аудио" }
+  ],
+  "products": [
+    {
+      "id": "aurora-x15-pro", "name": "Aurora X15 Pro 256 ГБ", "brand": "Aurora", "category": "smartphones",
+      "price": 89990, "oldPrice": 99990, "rating": 4.8, "reviews": 1243, "isNew": true, "hasVideo": true,
+      "image": "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=900&q=80",
+      "youtubeId": "LXb3EKWsInQ",
+      "marketUrl": "https://market.yandex.ru/search?text=смартфон",
+      "short": ["6.7\" OLED 120 Гц", "Камера 50 Мп", "5000 мАч"],
+      "specs": { "Экран": "6.7\" OLED, 120 Гц", "Процессор": "8 ядер, 3.3 ГГц", "Память": "12 / 256 ГБ", "Камера": "50 + 12 + 10 Мп", "Аккумулятор": "5000 мАч, 67 Вт", "Вес": "198 г" },
+      "pros": ["Яркий экран с высокой частотой", "Отличная ночная съёмка", "Быстрая зарядка"],
+      "cons": ["Нет слота microSD", "Скользкий корпус"]
+    },
+    {
+      "id": "nova-s9", "name": "Nova S9 128 ГБ", "brand": "Nova", "category": "smartphones",
+      "price": 34990, "rating": 4.5, "reviews": 812, "isNew": false, "hasVideo": true,
+      "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=900&q=80",
+      "youtubeId": "LXb3EKWsInQ",
+      "marketUrl": "https://market.yandex.ru/search?text=смартфон",
+      "short": ["6.4\" AMOLED", "Камера 64 Мп", "NFC"],
+      "specs": { "Экран": "6.4\" AMOLED, 90 Гц", "Память": "8 / 128 ГБ", "Камера": "64 + 8 Мп", "Аккумулятор": "4500 мАч", "Вес": "180 г" },
+      "pros": ["Хорошая цена", "Компактный корпус"],
+      "cons": ["Средняя производительность в играх"]
+    },
+    {
+      "id": "zenbook-air-14", "name": "ZenAir 14 OLED, 16/512 ГБ", "brand": "Zen", "category": "laptops",
+      "price": 104990, "oldPrice": 119990, "rating": 4.7, "reviews": 356, "isNew": true, "hasVideo": true,
+      "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=900&q=80",
+      "youtubeId": "LXb3EKWsInQ",
+      "marketUrl": "https://market.yandex.ru/search?text=ноутбук",
+      "short": ["14\" OLED 2.8K", "16 ГБ ОЗУ", "1.2 кг"],
+      "specs": { "Экран": "14\" OLED 2880×1800", "Процессор": "12 ядер", "ОЗУ": "16 ГБ LPDDR5", "Накопитель": "512 ГБ SSD", "Автономность": "до 15 ч", "Вес": "1.2 кг" },
+      "pros": ["Очень лёгкий", "Великолепный экран", "Тихая работа"],
+      "cons": ["Мало портов", "Глянцевый экран бликует"]
+    },
+    {
+      "id": "titan-g16", "name": "Titan G16 игровой, RTX", "brand": "Titan", "category": "laptops",
+      "price": 159990, "rating": 4.6, "reviews": 214, "isNew": false, "hasVideo": false,
+      "image": "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=900&q=80",
+      "youtubeId": "",
+      "marketUrl": "https://market.yandex.ru/search?text=игровой+ноутбук",
+      "short": ["16\" 240 Гц", "32 ГБ ОЗУ", "1 ТБ SSD"],
+      "specs": { "Экран": "16\" IPS 240 Гц", "Видеокарта": "дискретная, 8 ГБ", "ОЗУ": "32 ГБ", "Накопитель": "1 ТБ SSD", "Вес": "2.4 кг" },
+      "pros": ["Высокая производительность", "Хорошее охлаждение"],
+      "cons": ["Тяжёлый", "Шумит под нагрузкой"]
+    },
+    {
+      "id": "playbox-5", "name": "PlayBox 5 Digital Edition", "brand": "PlayBox", "category": "games",
+      "price": 54990, "rating": 4.9, "reviews": 2980, "isNew": false, "hasVideo": true,
+      "image": "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=900&q=80",
+      "youtubeId": "LXb3EKWsInQ",
+      "marketUrl": "https://market.yandex.ru/search?text=игровая+консоль",
+      "short": ["4K 120 FPS", "SSD 825 ГБ", "Трассировка лучей"],
+      "specs": { "Разрешение": "до 4K", "Частота кадров": "до 120 FPS", "Накопитель": "825 ГБ SSD", "Подключение": "Wi-Fi 6, Bluetooth 5.1" },
+      "pros": ["Мгновенная загрузка игр", "Отличный геймпад"],
+      "cons": ["Крупные габариты"]
+    },
+    {
+      "id": "pulse-gamepad", "name": "Pulse беспроводной геймпад", "brand": "Pulse", "category": "games",
+      "price": 6490, "rating": 4.4, "reviews": 640, "isNew": true, "hasVideo": false,
+      "image": "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=900&q=80",
+      "youtubeId": "",
+      "marketUrl": "https://market.yandex.ru/search?text=геймпад",
+      "short": ["Bluetooth", "до 30 ч", "Вибро-отдача"],
+      "specs": { "Подключение": "Bluetooth / USB-C", "Автономность": "до 30 ч", "Совместимость": "ПК, Android, консоли" },
+      "pros": ["Долгая автономность", "Удобный хват"],
+      "cons": ["Нет встроенного аудиовыхода"]
+    },
+    {
+      "id": "home-hub-mini", "name": "HomeHub Mini умная колонка", "brand": "HomeHub", "category": "smart-home",
+      "price": 7990, "rating": 4.6, "reviews": 1520, "isNew": true, "hasVideo": true,
+      "image": "https://images.unsplash.com/photo-1543512214-318c7553f230?w=900&q=80",
+      "youtubeId": "LXb3EKWsInQ",
+      "marketUrl": "https://market.yandex.ru/search?text=умная+колонка",
+      "short": ["Голосовой ассистент", "Zigbee-хаб", "Wi-Fi"],
+      "specs": { "Мощность": "10 Вт", "Протоколы": "Wi-Fi, Bluetooth, Zigbee", "Управление": "голос, приложение" },
+      "pros": ["Управляет всем домом", "Компактная"],
+      "cons": ["Скромный бас"]
+    },
+    {
+      "id": "smart-lamp-rgb", "name": "Lumi умная лампа RGB E27", "brand": "Lumi", "category": "smart-home",
+      "price": 1290, "rating": 4.3, "reviews": 3410, "isNew": false, "hasVideo": false,
+      "image": "https://images.unsplash.com/photo-1558002038-1055907df827?w=900&q=80",
+      "youtubeId": "",
+      "marketUrl": "https://market.yandex.ru/search?text=умная+лампа",
+      "short": ["16 млн цветов", "Wi-Fi", "9 Вт"],
+      "specs": { "Цоколь": "E27", "Мощность": "9 Вт", "Цвета": "16 млн + белый 2700–6500K", "Подключение": "Wi-Fi 2.4 ГГц" },
+      "pros": ["Низкая цена", "Простая настройка"],
+      "cons": ["Нет поддержки 5 ГГц"]
+    },
+    {
+      "id": "sonic-wave-anc", "name": "SonicWave ANC полноразмерные", "brand": "Sonic", "category": "audio",
+      "price": 24990, "oldPrice": 29990, "rating": 4.8, "reviews": 905, "isNew": true, "hasVideo": true,
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=900&q=80",
+      "youtubeId": "LXb3EKWsInQ",
+      "marketUrl": "https://market.yandex.ru/search?text=наушники",
+      "short": ["Шумоподавление", "до 40 ч", "Hi-Res"],
+      "specs": { "Тип": "полноразмерные, закрытые", "Шумоподавление": "активное, адаптивное", "Автономность": "до 40 ч", "Кодеки": "AAC, LDAC" },
+      "pros": ["Мощное шумоподавление", "Детальный звук", "Удобные амбушюры"],
+      "cons": ["Не складываются"]
+    },
+    {
+      "id": "buds-air-2", "name": "Buds Air 2 TWS-наушники", "brand": "Sonic", "category": "audio",
+      "price": 8990, "rating": 4.5, "reviews": 2110, "isNew": false, "hasVideo": false,
+      "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=900&q=80",
+      "youtubeId": "",
+      "marketUrl": "https://market.yandex.ru/search?text=беспроводные+наушники",
+      "short": ["TWS", "IPX4", "до 28 ч с кейсом"],
+      "specs": { "Тип": "внутриканальные TWS", "Защита": "IPX4", "Автономность": "7 ч + 21 ч кейс", "Bluetooth": "5.3" },
+      "pros": ["Лёгкие", "Хорошая цена"],
+      "cons": ["Слабое шумоподавление"]
+    }
+  ]
+}
