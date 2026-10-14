@@ -11,7 +11,6 @@
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <!-- Кнопка бургер меню -->
                 <button onclick="toggleMenu()" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition focus:outline-none">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -28,7 +27,7 @@
         </div>
     </header>
 
-    <!-- Выпадающее меню-бургер (модальное оверлей) -->
+    <!-- Выпадающее меню-бургер -->
     <div id="mobileMenu" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm hidden transition-opacity">
         <div class="bg-white w-4/5 max-w-xs h-full shadow-2xl p-6 flex flex-col justify-between transform -translate-x-full transition-transform duration-300" id="menuPanel">
             <div>
@@ -43,12 +42,12 @@
                         </svg>
                     </button>
                 </div>
-                <div class="flex flex-col space-y-2" id="menuCategories">
-                    <button onclick="selectCategoryFromMenu('all')" class="menu-cat-btn text-left px-4 py-3 rounded-xl font-bold bg-blue-50 text-blue-600 transition">🔥 Все товары</button>
-                    <button onclick="selectCategoryFromMenu('Смартфоны')" class="menu-cat-btn text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-100 transition">📱 Смартфоны и гаджеты</button>
-                    <button onclick="selectCategoryFromMenu('Игры')" class="menu-cat-btn text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-100 transition">🎮 Игры и консоли</button>
-                    <button onclick="selectCategoryFromMenu('Аудио')" class="menu-cat-btn text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-100 transition">🎧 Аудио и звук</button>
-                    <button onclick="selectCategoryFromMenu('Умный дом')" class="menu-cat-btn text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-100 transition">🏠 Умный дом</button>
+                <div class="flex flex-col space-y-2">
+                    <button onclick="selectCategoryFromMenu('all')" class="text-left px-4 py-3 rounded-xl font-bold bg-blue-50 text-blue-600 transition">🔥 Все товары</button>
+                    <button onclick="selectCategoryFromMenu('Смартфоны')" class="text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-100 transition">📱 Смартфоны и гаджеты</button>
+                    <button onclick="selectCategoryFromMenu('Игры')" class="text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-100 transition">🎮 Игры и консоли</button>
+                    <button onclick="selectCategoryFromMenu('Аудио')" class="text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-100 transition">🎧 Аудио и звук</button>
+                    <button onclick="selectCategoryFromMenu('Умный дом')" class="text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-100 transition">🏠 Умный дом</button>
                 </div>
             </div>
             <div class="text-xs text-slate-400 text-center py-4 border-t border-slate-100">
@@ -59,20 +58,18 @@
 
     <!-- Главный контейнер -->
     <main class="max-w-7xl mx-auto px-4 py-6">
-        <!-- Баннер -->
         <div class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 rounded-3xl p-6 md:p-10 text-white mb-6 shadow-xl relative overflow-hidden">
             <div class="relative z-10">
                 <h1 class="text-2xl md:text-4xl font-black mb-3 tracking-tight">Выбирайте технику с умом, а не наугад</h1>
                 <p class="text-blue-100 max-w-xl text-sm md:text-base leading-relaxed mb-5">Актуальные тренды, честные видеообзоры и прямые партнерские ссылки.</p>
-                <!-- Поиск -->
                 <div class="max-w-md">
                     <input type="text" id="searchInput" placeholder="Поиск по технике, брендам, моделям..." class="w-full px-4 py-3 rounded-2xl text-slate-900 bg-white/95 backdrop-blur placeholder-slate-400 text-sm focus:outline-none focus:ring-4 focus:ring-blue-400/50 shadow-lg">
                 </div>
             </div>
         </div>
 
-        <!-- Быстрые фильтры на экране -->
-        <div class="flex items-center space-x-2 overflow-x-auto pb-4 mb-6 no-scrollbar" id="categoryFilters">
+        <!-- Быстрые фильтры -->
+        <div class="flex items-center space-x-2 overflow-x-auto pb-4 mb-6 no-scrollbar">
             <button onclick="filterCategory('all')" class="cat-btn px-4 py-2 rounded-xl text-xs md:text-sm font-bold bg-blue-600 text-white transition shadow-sm whitespace-nowrap">Все товары</button>
             <button onclick="filterCategory('Смартфоны')" class="cat-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition whitespace-nowrap">Смартфоны</button>
             <button onclick="filterCategory('Игры')" class="cat-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition whitespace-nowrap">Игры и консоли</button>
@@ -81,9 +78,7 @@
         </div>
 
         <!-- Сетка товаров -->
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6" id="productsGrid">
-            <!-- Динамические карточки -->
-        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6" id="productsGrid"></div>
     </main>
 
     <!-- Футер -->
@@ -94,19 +89,21 @@
         </div>
     </footer>
 
-    <!-- Скрипты -->
     <script>
-        const products = [
-            { id: 1, title: "PlayBox 5 Digital Edition", category: "Игры", price: "49 990 ₽", rating: "4.9", image: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=500&q=80", desc: "Мощная игровая консоль нового поколения с поддержкой трассировки лучей." },
-            { id: 2, title: "Aurora X15 Pro 256GB", category: "Смартфоны", price: "79 990 ₽", rating: "4.8", image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80", desc: "Флагманский смартфон с великолепным экраном и топовой камерой." },
-            { id: 3, title: "SonicWave ANC Headphones", category: "Аудио", price: "14 990 ₽", rating: "4.7", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80", desc: "Беспроводные наушники с активным шумоподавлением и чистейшим басом." },
-            { id: 4, title: "SmartHome Hub Yandex", category: "Умный дом", price: "4 990 ₽", rating: "4.9", image: "https://images.unsplash.com/photo-1558089687-f282ffcbc126?auto=format&fit=crop&w=500&q=80", desc: "Центр управления умным домом с поддержкой голосового ассистента." },
-            { id: 5, title: "UltraBook Pro 14 OLED", category: "Смартфоны", price: "99 990 ₽", rating: "4.9", image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80", desc: "Легкий и мощный ультрабук с потрясающим OLED-экраном." },
-            { id: 6, title: "CyberPhone 14 Ultra", category: "Смартфоны", price: "89 990 ₽", rating: "4.6", image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=500&q=80", desc: "Инновационный гаджет с передовым процессором." }
-        ];
-
+        let products = [];
         let currentCategory = 'all';
         let searchQuery = '';
+
+        async function loadProducts() {
+            try {
+                const res = await fetch('products.json?' + new Date().getTime());
+                const data = await res.json();
+                products = data.products || [];
+                renderProducts();
+            } catch (e) {
+                console.error("Error loading products", e);
+            }
+        }
 
         function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
@@ -129,12 +126,12 @@
             const grid = document.getElementById('productsGrid');
             const filtered = products.filter(p => {
                 const matchesCat = currentCategory === 'all' || p.category === currentCategory;
-                const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) || p.desc.toLowerCase().includes(searchQuery.toLowerCase());
+                const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase());
                 return matchesCat && matchesSearch;
             });
 
             if (filtered.length === 0) {
-                grid.innerHTML = '<div class="col-span-full py-12 text-center text-slate-400 font-medium">Ничего не найдено по вашему запросу</div>';
+                grid.innerHTML = '<div class="col-span-full py-12 text-center text-slate-400 font-medium">Ничего не найдено</div>';
                 return;
             }
 
@@ -146,14 +143,13 @@
                         </div>
                         <span class="text-[10px] md:text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">${item.category}</span>
                         <h3 class="font-bold text-sm md:text-base mt-2 mb-1 text-slate-800 line-clamp-2">${item.title}</h3>
-                        <p class="text-slate-500 text-xs md:text-sm line-clamp-2 mb-3">${item.desc}</p>
                     </div>
                     <div>
                         <div class="flex items-center justify-between mb-3">
                             <span class="text-base md:text-xl font-black text-slate-900">${item.price}</span>
                             <span class="text-yellow-500 text-xs md:text-sm font-bold">★ ${item.rating}</span>
                         </div>
-                        <a href="https://market.yandex.ru" target="_blank" rel="sponsored nofollow" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2.5 rounded-xl text-xs md:text-sm font-bold transition shadow-sm">Смотреть на Маркете</a>
+                        <a href="${item.market_link}" target="_blank" rel="sponsored nofollow" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2.5 rounded-xl text-xs md:text-sm font-bold transition shadow-sm">Смотреть на Маркете</a>
                     </div>
                 </div>
             `).join('');
@@ -176,7 +172,8 @@
             renderProducts();
         });
 
-        renderProducts();
+        loadProducts();
     </script>
 </body>
+</html>
 </html>

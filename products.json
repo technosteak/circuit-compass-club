@@ -1,5 +1,5 @@
 {
-    "updated_at": "2026-10-14T21:31:30.067494",
+    "updated_at": "2026-10-14T21:35:51.249137",
     "products": [
         {
             "id": 1,
@@ -8,6 +8,15 @@
             "price": "49 990 ₽",
             "rating": "4.9",
             "image": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=500&q=80",
+            "market_link": "https://market.yandex.ru"
+        },
+        {
+            "id": 2,
+            "title": "Aurora X15 Pro 256GB",
+            "category": "Смартфоны",
+            "price": "79 990 ₽",
+            "rating": "4.8",
+            "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80",
             "market_link": "https://market.yandex.ru"
         }
     ]
