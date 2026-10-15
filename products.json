@@ -1,6 +1,26 @@
 {
-    "updated_at": "2026-10-15T10:10:26.543745",
+    "updated_at": "2026-10-15T10:10:30.615203",
     "products": [
+        {
+            "title": "Ð¯Ð½Ð´ÐµÐºÑ",
+            "slug": "------------",
+            "category": "Аксессуары",
+            "is_juicy_discount": true,
+            "discount_percent": 25,
+            "price": 14990,
+            "price_formatted": "14 990 ₽",
+            "old_price_formatted": "18737 ₽",
+            "price_status": "🔥 Сочная скидка",
+            "rating": 4.8,
+            "image": "https://yastatic.net/s3/home-static/_/37/37a02b5dc7a51abac55d8a5b6c865f0e.png",
+            "images": [
+                "https://yastatic.net/s3/home-static/_/37/37a02b5dc7a51abac55d8a5b6c865f0e.png"
+            ],
+            "badge": "Маркетплейс",
+            "desc": "Официальная модель Ð¯Ð½Ð´ÐµÐºÑ с доставкой, гарантией и отзывами на Яндекс Маркете.",
+            "market_link": "https://market.yandex.ru/cc/BJi8Gx",
+            "id": 7
+        },
         {
             "id": 1,
             "title": "PlayStation 5 Digital Edition",
