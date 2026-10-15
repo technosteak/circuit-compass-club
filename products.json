@@ -1,5 +1,5 @@
 {
-    "updated_at": "2026-10-15T07:48:40.685182",
+    "updated_at": "2026-10-15T07:52:22.085051",
     "products": [
         {
             "id": 1,
@@ -127,6 +127,43 @@
                 }
             ],
             "market_link": "https://market.yandex.ru"
+        },
+        {
+            "title": "Nintendo Switch OLED",
+            "slug": "nintendo-switch-oled",
+            "category": "Игры",
+            "is_juicy_discount": true,
+            "discount_percent": 15,
+            "price": 31990,
+            "old_price_formatted": "37 990 ₽",
+            "price_status": "Скидка -15%",
+            "rating": 4.7,
+            "image": "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?auto=format&fit=crop&w=500&q=80",
+            "badge": "Хит",
+            "desc": "Яркий 7-дюймовый OLED-экран для портативного гейминга.",
+            "id": 4,
+            "price_formatted": "31 990 ₽",
+            "market_link": "https://market.yandex.ru",
+            "video_type": "rutube",
+            "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
+            "verdict_plus": [
+                "Отличное соотношение цены и качества",
+                "Надежная сборка",
+                "Положительные отзывы"
+            ],
+            "verdict_minus": [
+                "Быстро раскупают по акции"
+            ],
+            "reviews": [
+                {
+                    "author": "Покупатель",
+                    "rating": 5,
+                    "date": "Сегодня",
+                    "text": "Отличный товар, доставили быстро.",
+                    "plus": "Качество",
+                    "minus": "Нет"
+                }
+            ]
         }
     ]
 }
