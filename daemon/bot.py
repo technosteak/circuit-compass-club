@@ -1,68 +1,126 @@
 import json
 import os
-import random
 import subprocess
 from datetime import datetime
 
 REPO_DIR = "/var/www/technosteak"
 JSON_PATH = os.path.join(REPO_DIR, "products.json")
 
-# Четкие базы данных без пересечений мусора
-CATALOG_POOL = [
-    {"title": "PlayBox 5 Digital Edition", "slug": "playbox-5-digital", "category": "Игры", "price": 49990, "image": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=500&q=80", "desc": "Мощная игровая консоль нового поколения с поддержкой 4K и SSD."},
-    {"title": "Xbox Series X 1TB", "slug": "xbox-series-x", "category": "Игры", "price": 52990, "image": "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?auto=format&fit=crop&w=500&q=80", "desc": "Флагманская консоль Microsoft с высокой производительностью."},
-    {"title": "SonicWave ANC Headphones", "slug": "sonicwave-anc", "category": "Аудио", "price": 13990, "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80", "desc": "Беспроводные наушники с активным шумоподавлением и чистым басом."},
-    {"title": "JBL Charge 5 Speaker", "slug": "jbl-charge-5", "category": "Аудио", "price": 14990, "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=500&q=80", "desc": "Мощная влагозащищенная портативная колонка."},
-    {"title": "Aurora X15 Pro 256GB", "slug": "aurora-x15-pro", "category": "Смартфоны", "price": 79990, "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80", "desc": "Флагманский смартфон с 120 Гц AMOLED-экраном."},
-    {"title": "Xiaomi Redmi Note 13 Pro", "slug": "redmi-note-13-pro", "category": "Смартфоны", "price": 28990, "image": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=500&q=80", "desc": "Народный смартфон с камерой 200 Мп и быстрой зарядкой."},
-    {"title": "MacBook Air 13 M2", "slug": "macbook-air-13-m2", "category": "Ноутбуки", "price": 114990, "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80", "desc": "Легкий и невероятно быстрый ноутбук на базе чипа M2."},
-    {"title": "Asus TUF Gaming A15", "slug": "asus-tuf-gaming-a15", "category": "Ноутбуки", "price": 89990, "image": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=500&q=80", "desc": "Надежный игровой ноутбук с мощной видеокартой."},
-    {"title": "Yandex Station Midi", "slug": "yandex-station-midi", "category": "Умный дом", "price": 14990, "image": "https://images.unsplash.com/photo-1543512214-318c7553f230?auto=format&fit=crop&w=500&q=80", "desc": "Умная колонка с голосовым помощником Алисой и LED-дисплеем."},
-    {"title": "Robot Vacuum Cleaner S10", "slug": "robot-vacuum-s10", "category": "Умный дом", "price": 22990, "image": "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?auto=format&fit=crop&w=500&q=80", "desc": "Робот-пылесос с лазерной навигацией и влажной уборкой."}
+# Четкий список только РЕАЛЬНЫХ товаров с корректными фотографиями и описаниями
+REAL_PRODUCTS = [
+    {
+        "id": 1,
+        "title": "PlayStation 5 Digital Edition",
+        "slug": "playstation-5-digital",
+        "category": "Игры",
+        "is_juicy_discount": True,
+        "discount_percent": 25,
+        "price": 49990,
+        "price_formatted": "49 990 ₽",
+        "old_price_formatted": "66 500 ₽",
+        "price_status": "Скидка -25%",
+        "rating": 4.9,
+        "image": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=600&q=80",
+        "badge": "Хит продаж",
+        "desc": "Игровая консоль Sony с ультраскоростным SSD, поддержкой 4K и отдачей DualSense.",
+        "market_link": "https://market.yandex.ru"
+    },
+    {
+        "id": 2,
+        "title": "Беспроводные наушники Sony WH-1000XM4",
+        "slug": "sony-wh-1000xm4",
+        "category": "Аудио",
+        "is_juicy_discount": True,
+        "discount_percent": 30,
+        "price": 24990,
+        "price_formatted": "24 990 ₽",
+        "old_price_formatted": "35 990 ₽",
+        "price_status": "Скидка -30%",
+        "rating": 4.9,
+        "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80",
+        "badge": "Выбор экспертов",
+        "desc": "Полноразмерные наушники с лучшим в классе активным шумоподавлением и LDAC.",
+        "market_link": "https://market.yandex.ru"
+    },
+    {
+        "id": 3,
+        "title": "Apple iPhone 15 Pro 128GB",
+        "slug": "iphone-15-pro-128gb",
+        "category": "Смартфоны",
+        "is_juicy_discount": False,
+        "discount_percent": 0,
+        "price": 98990,
+        "price_formatted": "98 990 ₽",
+        "old_price_formatted": "109 990 ₽",
+        "price_status": "Лучшая цена",
+        "rating": 4.8,
+        "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80",
+        "badge": "Флагман",
+        "desc": "Флагманский смартфон в титановом корпусе с процессором A17 Pro и кнопкой Action.",
+        "market_link": "https://market.yandex.ru"
+    },
+    {
+        "id": 4,
+        "title": "Портативная колонка JBL Charge 5",
+        "slug": "jbl-charge-5",
+        "category": "Аудио",
+        "is_juicy_discount": True,
+        "discount_percent": 15,
+        "price": 14990,
+        "price_formatted": "14 990 ₽",
+        "old_price_formatted": "17 990 ₽",
+        "price_status": "Скидка -15%",
+        "rating": 4.9,
+        "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=600&q=80",
+        "badge": "Влагозащита",
+        "desc": "Мощный звук, защита IP67 от воды и пыли, работа до 20 часов от одного заряда.",
+        "market_link": "https://market.yandex.ru"
+    },
+    {
+        "id": 5,
+        "title": "Ноутбук Apple MacBook Air 13 M2",
+        "slug": "macbook-air-13-m2",
+        "category": "Ноутбуки",
+        "is_juicy_discount": False,
+        "discount_percent": 0,
+        "price": 109990,
+        "price_formatted": "109 990 ₽",
+        "old_price_formatted": "119 990 ₽",
+        "price_status": "Популярное",
+        "rating": 5.0,
+        "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80",
+        "badge": "Тонкий и легкий",
+        "desc": "Ультратонкий ноутбук на процессоре M2 с дисплеем Liquid Retina и бесшумным охлаждением.",
+        "market_link": "https://market.yandex.ru"
+    },
+    {
+        "id": 6,
+        "title": "Умная колонка Яндекс Станция Миди",
+        "slug": "yandex-station-midi",
+        "category": "Умный дом",
+        "is_juicy_discount": True,
+        "discount_percent": 20,
+        "price": 13990,
+        "price_formatted": "13 990 ₽",
+        "old_price_formatted": "16 990 ₽",
+        "price_status": "Скидка -20%",
+        "rating": 4.8,
+        "image": "https://images.unsplash.com/photo-1543512214-318c7553f230?auto=format&fit=crop&w=600&q=80", "badge": "С Алисой",
+        "desc": "Компактная умная колонка со встроенным хабом Zigbee, мощным звуком 24 Вт и LED-экраном.",
+        "market_link": "https://market.yandex.ru"
+    }
 ]
 
-def load_database():
-    if os.path.exists(JSON_PATH):
-        try:
-            with open(JSON_PATH, "r", encoding="utf-8") as f:
-                return json.load(f).get("products", [])
-        except:
-            pass
-    return CATALOG_POOL[:4]
-
 def save_and_build():
-    products = load_database()
-    existing_slugs = {p["slug"] for p in products}
-
-    # Добавляем следующий логичный товар из пула, если есть новые
-    for item in CATALOG_POOL:
-        if item["slug"] not in existing_slugs:
-            new_p = item.copy()
-            new_p["id"] = max([p["id"] for p in products], default=0) + 1
-            is_juicy = random.choice([True, False])
-            discount = random.randint(15, 30) if is_juicy else 0
-            old_price = int(new_p["price"] * (1 + discount / 100)) if is_juicy else new_p["price"]
-            
-            new_p["is_juicy_discount"] = is_juicy
-            new_p["discount_percent"] = discount
-            new_p["price_formatted"] = f"{new_p['price']:,}".replace(",", " ") + " ₽"
-            new_p["old_price_formatted"] = f"{old_price:,}".replace(",", " ") + " ₽"
-            new_p["price_status"] = f"🔥 Скидка -{discount}%" if is_juicy else "Лучшая цена"
-            new_p["rating"] = round(random.uniform(4.7, 5.0), 1)
-            new_p["badge"] = f"-{discount}%" if is_juicy else "Хит"
-            new_p["market_link"] = "https://market.yandex.ru"
-            products.append(new_p)
-            break
-
     with open(JSON_PATH, "w", encoding="utf-8") as f:
-        json.dump({"updated_at": datetime.now().isoformat(), "products": products}, f, ensure_ascii=False, indent=4)
+        json.dump({"updated_at": datetime.now().isoformat(), "products": REAL_PRODUCTS}, f, ensure_ascii=False, indent=4)
 
-    # Генерация SEO-страниц
     product_dir = os.path.join(REPO_DIR, "product")
     os.makedirs(product_dir, exist_ok=True)
     sitemap_urls = ["https://technosteak.ru/", "https://technosteak.ru/products.json"]
 
-    for p in products:
+    # SEO Страницы товаров
+    for p in REAL_PRODUCTS:
         p_folder = os.path.join(product_dir, p["slug"])
         os.makedirs(p_folder, exist_ok=True)
         sitemap_urls.append(f"https://technosteak.ru/product/{p['slug']}/")
@@ -72,29 +130,39 @@ def save_and_build():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Купить {p['title']} — Обзор и цена | ТехноСтейк</title>
-    <meta name="description" content="{p['desc']} Цена: {p['price_formatted']}.">
+    <title>Купить {p['title']} — Характеристики и цена | ТехноСтейк</title>
+    <meta name="description" content="{p['desc']} Актуальная цена {p['price_formatted']} на Яндекс Маркете.">
+    <meta name="yandex-verification" content="hlxuv94aba53ntlh" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans antialiased">
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
             <a href="/" class="flex items-center space-x-2">
-                <span class="text-lg font-black bg-blue-600 text-white px-3 py-1 rounded-xl">ТС</span>
-                <span class="text-lg font-bold">ТехноСтейк</span>
+                <span class="text-lg font-black bg-blue-600 text-white px-3 py-1 rounded-xl shadow-sm">ТС</span>
+                <span class="text-lg font-bold text-slate-900">ТехноСтейк</span>
             </a>
-            <a href="https://t.me/technosteak" target="_blank" class="text-xs font-bold text-white bg-blue-500 px-3.5 py-2 rounded-xl">✈️ Telegram</a>
+            <a href="/" class="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1.5 rounded-xl hover:bg-blue-100 transition">← На главную</a>
         </div>
     </header>
+
     <main class="max-w-4xl mx-auto px-4 py-8">
         <div class="bg-white rounded-3xl border border-slate-200 p-6 md:p-8 shadow-sm flex flex-col md:flex-row gap-8 items-center">
-            <img src="{p['image']}" class="w-full md:w-1/2 h-72 object-cover rounded-2xl">
-            <div class="w-full md:w-1/2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-md">{p['category']}</span>
-                <h1 class="text-2xl font-black mt-2 mb-2">{p['title']}</h1>
-                <p class="text-slate-600 text-sm mb-4">{p['desc']}</p>
-                <div class="text-2xl font-black text-slate-900 mb-4">{p['price_formatted']}</div>
-                <a href="{p['market_link']}" target="_blank" class="block w-full bg-blue-600 text-white text-center py-3 rounded-xl font-bold">Смотреть на Маркете</a>
+            <div class="w-full md:w-1/2 bg-slate-100 h-72 rounded-2xl overflow-hidden relative">
+                <img src="{p['image']}" alt="{p['title']}" class="w-full h-full object-cover">
+                <span class="absolute top-3 right-3 bg-slate-900/80 backdrop-blur text-white text-xs font-bold px-3 py-1 rounded-lg">★ {p['rating']}</span>
+            </div>
+            <div class="w-full md:w-1/2 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-md">{p['category']}</span>
+                    <h1 class="text-2xl md:text-3xl font-black mt-2 mb-2 text-slate-900">{p['title']}</h1>
+                    <p class="text-slate-600 text-sm mb-4">{p['desc']}</p>
+                </div>
+                <div>
+                    <div class="text-2xl md:text-3xl font-black text-slate-900 mb-4">{p['price_formatted']}</div>
+                    <a href="{p['market_link']}" target="_blank" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-3.5 rounded-2xl font-bold transition shadow-md mb-2">Смотреть на Маркете</a>
+                    <a href="https://t.me/technosteak" target="_blank" class="block w-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-center py-2.5 rounded-2xl font-bold text-xs transition">📢 Канал в Telegram</a>
+                </div>
             </div>
         </div>
     </main>
@@ -103,71 +171,83 @@ def save_and_build():
         with open(os.path.join(p_folder, "index.html"), "w", encoding="utf-8") as f:
             f.write(p_html)
 
-    # Главная страница (Классический синий стиль + Бургер-меню + Категории)
+    # Главная страница (Строгий синий дизайн, бургер-меню, поиск, категории)
     index_html = """<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ТехноСтейк — Каталог техники, честные обзоры и лучшие цены</title>
+    <meta name="description" content="Независимый каталог техники с актуальными ценами, рейтингами и предложением проверенных гаджетов.">
+    <meta name="yandex-verification" content="hlxuv94aba53ntlh" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans antialiased">
-    <!-- Шапка с бургером -->
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <button onclick="toggleMenu()" class="p-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition">☰</button>
+                <button onclick="toggleMenu()" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition focus:outline-none">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
                 <a href="/" class="flex items-center space-x-2">
-                    <span class="text-lg font-black bg-blue-600 text-white px-3 py-1 rounded-xl">ТС</span>
-                    <span class="text-lg font-bold">ТехноСтейк</span>
+                    <span class="text-lg font-black bg-blue-600 text-white px-3 py-1 rounded-xl shadow-sm">ТС</span>
+                    <span class="text-lg font-bold tracking-tight text-slate-900">ТехноСтейк</span>
                 </a>
             </div>
-            <a href="https://t.me/technosteak" target="_blank" class="text-xs font-bold text-white bg-blue-500 px-3.5 py-2 rounded-xl">✈️ Telegram</a>
+            <div class="flex items-center space-x-2">
+                <a href="https://t.me/technosteak" target="_blank" class="text-xs font-bold text-white bg-blue-500 hover:bg-blue-600 px-3 py-1.5 rounded-xl transition shadow-xs hidden sm:inline-block">Telegram</a>
+                <span class="text-[11px] bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-1 rounded-full font-semibold">Яндекс Партнер</span>
+            </div>
         </div>
     </header>
 
-    <!-- Выдвижное бургер-меню -->
-    <div id="mobileMenu" class="fixed inset-0 z-50 bg-slate-900/50 hidden">
-        <div class="bg-white w-4/5 max-w-xs h-full p-6 shadow-2xl flex flex-col justify-between">
+    <!-- Бургер Меню -->
+    <div id="mobileMenu" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm hidden">
+        <div class="bg-white w-4/5 max-w-xs h-full shadow-2xl p-6 flex flex-col justify-between">
             <div>
-                <div class="flex items-center justify-between mb-6">
-                    <span class="font-bold text-lg">Категории</span>
-                    <button onclick="toggleMenu()" class="text-slate-500 font-bold text-lg">✕</button>
+                <div class="flex items-center justify-between mb-8">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-base font-black bg-blue-600 text-white px-2.5 py-1 rounded-lg">ТС</span>
+                        <span class="font-bold text-lg">Категории</span>
+                    </div>
+                    <button onclick="toggleMenu()" class="p-2 text-slate-400 hover:text-slate-600">✕</button>
                 </div>
                 <div class="flex flex-col space-y-2">
-                    <button onclick="filterCategory('all'); toggleMenu();" class="text-left px-4 py-2.5 rounded-xl font-bold bg-blue-50 text-blue-600">🔥 Все товары</button>
-                    <button onclick="filterCategory('juicy'); toggleMenu();" class="text-left px-4 py-2.5 rounded-xl font-semibold text-slate-700 hover:bg-slate-100">💥 Сочные скидки</button>
-                    <button onclick="filterCategory('Смартфоны'); toggleMenu();" class="text-left px-4 py-2.5 rounded-xl font-semibold text-slate-700 hover:bg-slate-100">📱 Смартфоны</button>
-                    <button onclick="filterCategory('Игры'); toggleMenu();" class="text-left px-4 py-2.5 rounded-xl font-semibold text-slate-700 hover:bg-slate-100">🎮 Игры и приставки</button>
-                    <button onclick="filterCategory('Аудио'); toggleMenu();" class="text-left px-4 py-2.5 rounded-xl font-semibold text-slate-700 hover:bg-slate-100">🎧 Аудио</button>
-                    <button onclick="filterCategory('Ноутбуки'); toggleMenu();" class="text-left px-4 py-2.5 rounded-xl font-semibold text-slate-700 hover:bg-slate-100">💻 Ноутбуки</button>
-                    <button onclick="filterCategory('Умный дом'); toggleMenu();" class="text-left px-4 py-2.5 rounded-xl font-semibold text-slate-700 hover:bg-slate-100">🏠 Умный дом</button>
+                    <button onclick="filterCategory('all'); toggleMenu();" class="text-left px-4 py-3 rounded-xl font-bold bg-blue-50 text-blue-600">🔥 Все товары</button>
+                    <button onclick="filterCategory('juicy'); toggleMenu();" class="text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-100">💥 Сочные скидки</button>
+                    <button onclick="filterCategory('Смартфоны'); toggleMenu();" class="text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-100">📱 Смартфоны</button>
+                    <button onclick="filterCategory('Игры'); toggleMenu();" class="text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-100">🎮 Игры и консоли</button>
+                    <button onclick="filterCategory('Аудио'); toggleMenu();" class="text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-100">🎧 Аудио</button>
+                    <button onclick="filterCategory('Ноутбуки'); toggleMenu();" class="text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-100">💻 Ноутбуки</button>
+                    <button onclick="filterCategory('Умный дом'); toggleMenu();" class="text-left px-4 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-100">🏠 Умный дом</button>
                 </div>
             </div>
-            <div class="text-xs text-slate-400 text-center">technosteak.ru • 2026</div>
+            <div class="text-xs text-slate-400 text-center py-4 border-t border-slate-100">technosteak.ru • 2026</div>
         </div>
     </div>
 
     <main class="max-w-7xl mx-auto px-4 py-6">
-        <div class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-6 md:p-8 text-white mb-6 shadow-md">
-            <h1 class="text-2xl md:text-3xl font-black mb-2">Выбирайте технику с умом</h1>
-            <p class="text-blue-100 text-sm mb-4">Качественные гаджеты, проверенные обзоры и лучшие цены.</p>
-            <input type="text" id="searchInput" placeholder="Поиск по каталогу..." class="w-full px-4 py-3 rounded-2xl text-slate-900 bg-white placeholder-slate-400 text-sm focus:outline-none">
+        <div class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 rounded-3xl p-6 md:p-10 text-white mb-6 shadow-xl relative overflow-hidden">
+            <h1 class="text-2xl md:text-4xl font-black mb-3 tracking-tight">Выбирайте технику с умом, а не наугад</h1>
+            <p class="text-blue-100 max-w-xl text-sm md:text-base leading-relaxed mb-5">Актуальные тренды, честные видеообзоры и прямые партнерские ссылки.</p>
+            <div class="max-w-md">
+                <input type="text" id="searchInput" placeholder="Поиск по технике, брендам, моделям..." class="w-full px-4 py-3 rounded-2xl text-slate-900 bg-white placeholder-slate-400 text-sm focus:outline-none focus:ring-4 focus:ring-blue-400/50 shadow-lg">
+            </div>
         </div>
 
-        <!-- Кнопки быстрого фильтра -->
         <div class="flex items-center space-x-2 overflow-x-auto pb-4 no-scrollbar">
-            <button onclick="filterCategory('all')" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white whitespace-nowrap">Все товары</button>
-            <button onclick="filterCategory('juicy')" class="cat-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white border border-slate-200 text-slate-700 whitespace-nowrap">💥 Скидки</button>
-            <button onclick="filterCategory('Смартфоны')" class="cat-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white border border-slate-200 text-slate-700 whitespace-nowrap">Смартфоны</button>
-            <button onclick="filterCategory('Игры')" class="cat-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white border border-slate-200 text-slate-700 whitespace-nowrap">Игры</button>
-            <button onclick="filterCategory('Аудио')" class="cat-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white border border-slate-200 text-slate-700 whitespace-nowrap">Аудио</button>
-            <button onclick="filterCategory('Ноутбуки')" class="cat-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white border border-slate-200 text-slate-700 whitespace-nowrap">Ноутбуки</button>
-            <button onclick="filterCategory('Умный дом')" class="cat-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white border border-slate-200 text-slate-700 whitespace-nowrap">Умный дом</button>
+            <button onclick="filterCategory('all')" class="cat-btn px-4 py-2 rounded-xl text-xs md:text-sm font-bold bg-blue-600 text-white shadow-sm whitespace-nowrap">Все товары</button>
+            <button onclick="filterCategory('juicy')" class="cat-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 whitespace-nowrap">💥 Скидки</button>
+            <button onclick="filterCategory('Смартфоны')" class="cat-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 whitespace-nowrap">Смартфоны</button>
+            <button onclick="filterCategory('Игры')" class="cat-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 whitespace-nowrap">Игры и консоли</button>
+            <button onclick="filterCategory('Аудио')" class="cat-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 whitespace-nowrap">Аудио</button>
+            <button onclick="filterCategory('Ноутбуки')" class="cat-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 whitespace-nowrap">Ноутбуки</button>
+            <button onclick="filterCategory('Умный дом')" class="cat-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 whitespace-nowrap">Умный дом</button>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="productsGrid"></div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="productsGrid"></div>
     </main>
 
     <script>
@@ -183,15 +263,15 @@ def save_and_build():
             const res = await fetch('products.json?' + new Date().getTime());
             const data = await res.json();
             products = data.products || [];
-            render();
+            renderProducts();
         }
 
         function filterCategory(cat) {
             currentCat = cat;
-            render();
+            renderProducts();
         }
 
-        function render() {
+        function renderProducts() {
             const grid = document.getElementById('productsGrid');
             let list = products.filter(p => {
                 let matchCat = currentCat === 'all' || (currentCat === 'juicy' ? p.is_juicy_discount : p.category === currentCat);
@@ -202,13 +282,17 @@ def save_and_build():
             grid.innerHTML = list.map(item => `
                 <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm flex flex-col justify-between">
                     <div>
-                        <a href="product/${item.slug}/"><img src="${item.image}" class="w-full h-36 object-cover rounded-xl mb-2"></a>
+                        <a href="product/${item.slug}/" class="block bg-slate-100 h-40 rounded-xl mb-3 overflow-hidden relative">
+                            <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
+                            <span class="absolute top-2 right-2 bg-slate-900/80 text-white text-[10px] font-bold px-2 py-0.5 rounded-md">★ ${item.rating}</span>
+                        </a>
                         <span class="text-[10px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-md">${item.category}</span>
-                        <a href="product/${item.slug}/" class="block font-bold text-sm mt-1 text-slate-800 line-clamp-2">${item.title}</a>
+                        <a href="product/${item.slug}/" class="block font-bold text-sm mt-2 mb-1 text-slate-800 line-clamp-2 hover:text-blue-600">${item.title}</a>
+                        <p class="text-slate-500 text-xs line-clamp-2 mb-3">${item.desc}</p>
                     </div>
-                    <div class="mt-4">
-                        <div class="text-base font-black text-slate-900 mb-2">${item.price_formatted}</div>
-                        <a href="${item.market_link}" target="_blank" class="block w-full bg-blue-600 text-white text-center py-2 rounded-xl text-xs font-bold">На Маркет</a>
+                    <div>
+                        <div class="text-base md:text-lg font-black text-slate-900 mb-2">${item.price_formatted}</div>
+                        <a href="${item.market_link}" target="_blank" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2.5 rounded-xl text-xs font-bold transition shadow-sm">Смотреть на Маркете</a>
                     </div>
                 </div>
             `).join('');
@@ -216,7 +300,7 @@ def save_and_build():
 
         document.getElementById('searchInput').addEventListener('input', (e) => {
             searchQuery = e.target.value;
-            render();
+            renderProducts();
         });
 
         loadProducts();
@@ -239,9 +323,9 @@ def save_and_build():
 
     os.chdir(REPO_DIR)
     subprocess.run(["git", "add", "."])
-    subprocess.run(["git", "commit", "-m", "Fix product data consistency and restore burger menu [skip ci]"])
+    subprocess.run(["git", "commit", "-m", "Clean solid database, restore blue UI and burger [skip ci]"])
     subprocess.run(["git", "push", "origin", "main"])
-    print("Fixed! Burger menu and clean product catalog restored.")
+    print("Done! Clean catalog restored.")
 
 if __name__ == "__main__":
     save_and_build()

@@ -1,10 +1,10 @@
 {
-    "updated_at": "2026-10-15T08:01:31.465849",
+    "updated_at": "2026-10-15T08:04:46.890616",
     "products": [
         {
             "id": 1,
-            "title": "PlayBox 5 Digital Edition",
-            "slug": "playbox-5-digital",
+            "title": "PlayStation 5 Digital Edition",
+            "slug": "playstation-5-digital",
             "category": "Игры",
             "is_juicy_discount": true,
             "discount_percent": 25,
@@ -13,362 +13,94 @@
             "old_price_formatted": "66 500 ₽",
             "price_status": "Скидка -25%",
             "rating": 4.9,
-            "image": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=500&q=80",
+            "image": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=600&q=80",
             "badge": "Хит продаж",
-            "video_type": "rutube",
-            "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
-            "desc": "Мощная игровая консоль нового поколения с поддержкой 4K, трассировки лучей и SSD.",
-            "verdict_plus": [
-                "Мгновенная загрузка",
-                "Тихое охлаждение",
-                "Отдача DualSense"
-            ],
-            "verdict_minus": [
-                "Крупные габариты"
-            ],
-            "cross_sell": [
-                "Второй геймпад",
-                "Зарядка"
-            ],
-            "versus_target": "xbox-series-x",
-            "versus_title": "Xbox Series X 1TB",
-            "reviews": [
-                {
-                    "author": "Артем К.",
-                    "rating": 5,
-                    "date": "12 октября 2026",
-                    "text": "Взял по акции со скидкой, огонь!",
-                    "plus": "Скорость",
-                    "minus": "Размер"
-                }
-            ],
+            "desc": "Игровая консоль Sony с ультраскоростным SSD, поддержкой 4K и отдачей DualSense.",
             "market_link": "https://market.yandex.ru"
         },
         {
             "id": 2,
-            "title": "SonicWave ANC Headphones",
-            "slug": "sonicwave-anc",
+            "title": "Беспроводные наушники Sony WH-1000XM4",
+            "slug": "sony-wh-1000xm4",
             "category": "Аудио",
             "is_juicy_discount": true,
             "discount_percent": 30,
-            "price": 13990,
-            "price_formatted": "13 990 ₽",
-            "old_price_formatted": "19 990 ₽",
+            "price": 24990,
+            "price_formatted": "24 990 ₽",
+            "old_price_formatted": "35 990 ₽",
             "price_status": "Скидка -30%",
-            "rating": 4.8,
-            "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80",
-            "badge": "Скидка",
-            "video_type": "rutube",
-            "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
-            "desc": "Беспроводные наушники с активным шумоподавлением и басом.",
-            "verdict_plus": [
-                "Шумодав",
-                "Автономность 35ч"
-            ],
-            "verdict_minus": [
-                "Чехол крупный"
-            ],
-            "cross_sell": [
-                "Кабель AUX",
-                "Адаптер"
-            ],
-            "versus_target": "",
-            "versus_title": "",
-            "reviews": [
-                {
-                    "author": "Елена П.",
-                    "rating": 5,
-                    "date": "10 октября 2026",
-                    "text": "Супер цена со скидкой!",
-                    "plus": "Звук",
-                    "minus": "Чехол"
-                }
-            ],
+            "rating": 4.9,
+            "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80",
+            "badge": "Выбор экспертов",
+            "desc": "Полноразмерные наушники с лучшим в классе активным шумоподавлением и LDAC.",
             "market_link": "https://market.yandex.ru"
         },
         {
             "id": 3,
-            "title": "Aurora X15 Pro 256GB",
-            "slug": "aurora-x15-pro",
+            "title": "Apple iPhone 15 Pro 128GB",
+            "slug": "iphone-15-pro-128gb",
             "category": "Смартфоны",
             "is_juicy_discount": false,
             "discount_percent": 0,
-            "price": 79990,
-            "price_formatted": "79 990 ₽",
-            "old_price_formatted": "85 990 ₽",
-            "price_status": "Скидка недели (-7%)",
+            "price": 98990,
+            "price_formatted": "98 990 ₽",
+            "old_price_formatted": "109 990 ₽",
+            "price_status": "Лучшая цена",
             "rating": 4.8,
-            "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80",
-            "badge": "Рекомендуем",
-            "video_type": "vk",
-            "video_id": "-228965804_456239018",
-            "desc": "Флагманский смартфон с 120 Гц AMOLED-экраном и ночной съемкой.",
-            "verdict_plus": [
-                "AMOLED 120Гц",
-                "Зарядка 120Вт"
-            ],
-            "verdict_minus": [
-                "Нет microSD"
-            ],
-            "cross_sell": [
-                "Стекло 9H",
-                "Чехол"
-            ],
-            "versus_target": "",
-            "versus_title": "",
-            "reviews": [
-                {
-                    "author": "Сергей В.",
-                    "rating": 5,
-                    "date": "14 октября 2026",
-                    "text": "Камера отличная",
-                    "plus": "Зарядка",
-                    "minus": "Греется"
-                }
-            ],
+            "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80",
+            "badge": "Флагман",
+            "desc": "Флагманский смартфон в титановом корпусе с процессором A17 Pro и кнопкой Action.",
             "market_link": "https://market.yandex.ru"
         },
         {
-            "title": "Nintendo Switch OLED",
-            "slug": "nintendo-switch-oled",
-            "category": "Игры",
+            "id": 4,
+            "title": "Портативная колонка JBL Charge 5",
+            "slug": "jbl-charge-5",
+            "category": "Аудио",
             "is_juicy_discount": true,
             "discount_percent": 15,
-            "price": 31990,
-            "old_price_formatted": "37 990 ₽",
+            "price": 14990,
+            "price_formatted": "14 990 ₽",
+            "old_price_formatted": "17 990 ₽",
             "price_status": "Скидка -15%",
-            "rating": 4.7,
-            "image": "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?auto=format&fit=crop&w=500&q=80",
-            "badge": "Хит",
-            "desc": "Яркий 7-дюймовый OLED-экран для портативного гейминга.",
-            "id": 4,
-            "price_formatted": "31 990 ₽",
-            "market_link": "https://market.yandex.ru",
-            "video_type": "rutube",
-            "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
-            "verdict_plus": [
-                "Отличное соотношение цены и качества",
-                "Надежная сборка",
-                "Положительные отзывы"
-            ],
-            "verdict_minus": [
-                "Быстро раскупают по акции"
-            ],
-            "reviews": [
-                {
-                    "author": "Покупатель",
-                    "rating": 5,
-                    "date": "Сегодня",
-                    "text": "Отличный товар, доставили быстро.",
-                    "plus": "Качество",
-                    "minus": "Нет"
-                }
-            ]
+            "rating": 4.9,
+            "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=600&q=80",
+            "badge": "Влагозащита",
+            "desc": "Мощный звук, защита IP67 от воды и пыли, работа до 20 часов от одного заряда.",
+            "market_link": "https://market.yandex.ru"
         },
         {
             "id": 5,
-            "title": "Xbox Galaxy A55 5G 512GB",
-            "slug": "xbox-galaxy-a55-5g-512gb-5",
-            "category": "Смартфоны",
+            "title": "Ноутбук Apple MacBook Air 13 M2",
+            "slug": "macbook-air-13-m2",
+            "category": "Ноутбуки",
             "is_juicy_discount": false,
             "discount_percent": 0,
-            "price": 53432,
-            "price_formatted": "53 432 ₽",
-            "old_price_formatted": "53 432 ₽",
-            "price_status": "Выгодная цена",
-            "rating": 4.9,
-            "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80",
-            "badge": "Хит",
-            "video_type": "rutube",
-            "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
-            "desc": "Официальный гаджет Xbox Galaxy A55 5G 512GB с гарантией и быстрой доставкой по всей России.",
-            "verdict_plus": [
-                "Официальная гарантия",
-                "Высокий рейтинг покупателей",
-                "Быстрая доставка"
-            ],
-            "verdict_minus": [
-                "Ограниченное количество по акции"
-            ],
+            "price": 109990,
+            "price_formatted": "109 990 ₽",
+            "old_price_formatted": "119 990 ₽",
+            "price_status": "Популярное",
+            "rating": 5.0,
+            "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80",
+            "badge": "Тонкий и легкий",
+            "desc": "Ультратонкий ноутбук на процессоре M2 с дисплеем Liquid Retina и бесшумным охлаждением.",
             "market_link": "https://market.yandex.ru"
         },
         {
             "id": 6,
-            "title": "Realme Умная лампочка RGB",
-            "slug": "realme-умная-лампочка-rgb-6",
+            "title": "Умная колонка Яндекс Станция Миди",
+            "slug": "yandex-station-midi",
             "category": "Умный дом",
-            "is_juicy_discount": false,
-            "discount_percent": 0,
-            "price": 16564,
-            "price_formatted": "16 564 ₽",
-            "old_price_formatted": "16 564 ₽",
-            "price_status": "Выгодная цена",
-            "rating": 4.5,
-            "image": "https://images.unsplash.com/photo-1558089687-f282ffcbc126?auto=format&fit=crop&w=500&q=80",
-            "badge": "Хит",
-            "video_type": "rutube",
-            "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
-            "desc": "Официальный гаджет Realme Умная лампочка RGB с гарантией и быстрой доставкой по всей России.",
-            "verdict_plus": [
-                "Официальная гарантия",
-                "Высокий рейтинг покупателей",
-                "Быстрая доставка"
-            ],
-            "verdict_minus": [
-                "Ограниченное количество по акции"
-            ],
-            "market_link": "https://market.yandex.ru"
-        },
-        {
-            "id": 7,
-            "title": "Honor ZenBook OLED",
-            "slug": "honor-zenbook-oled-7",
-            "category": "Ноутбуки",
-            "is_juicy_discount": false,
-            "discount_percent": 0,
-            "price": 84919,
-            "price_formatted": "84 919 ₽",
-            "old_price_formatted": "84 919 ₽",
-            "price_status": "Выгодная цена",
-            "rating": 4.7,
-            "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80",
-            "badge": "Хит",
-            "video_type": "rutube",
-            "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
-            "desc": "Официальный гаджет Honor ZenBook OLED с гарантией и быстрой доставкой по всей России.",
-            "verdict_plus": [
-                "Официальная гарантия",
-                "Высокий рейтинг покупателей",
-                "Быстрая доставка"
-            ],
-            "verdict_minus": [
-                "Ограниченное количество по акции"
-            ],
-            "market_link": "https://market.yandex.ru"
-        },
-        {
-            "id": 8,
-            "title": "Apple VR Headset 2",
-            "slug": "apple-vr-headset-2-8",
-            "category": "Игры",
             "is_juicy_discount": true,
-            "discount_percent": 30,
-            "price": 8550,
-            "price_formatted": "8 550 ₽",
-            "old_price_formatted": "11 115 ₽",
-            "price_status": "🔥 Скидка -30%",
-            "rating": 4.7,
-            "image": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=500&q=80",
-            "badge": "-30%",
-            "video_type": "rutube",
-            "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
-            "desc": "Официальный гаджет Apple VR Headset 2 с гарантией и быстрой доставкой по всей России.",
-            "verdict_plus": [
-                "Официальная гарантия",
-                "Высокий рейтинг покупателей",
-                "Быстрая доставка"
-            ],
-            "verdict_minus": [
-                "Ограниченное количество по акции"
-            ],
-            "market_link": "https://market.yandex.ru"
-        },
-        {
-            "id": 9,
-            "title": "Sony ProBook 15",
-            "slug": "sony-probook-15-9",
-            "category": "Аксессуары",
-            "is_juicy_discount": false,
-            "discount_percent": 0,
-            "price": 133098,
-            "price_formatted": "133 098 ₽",
-            "old_price_formatted": "133 098 ₽",
-            "price_status": "Выгодная цена",
-            "rating": 4.6,
-            "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80",
-            "badge": "Хит",
-            "video_type": "rutube",
-            "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
-            "desc": "Официальный гаджет Sony ProBook 15 с гарантией и быстрой доставкой по всей России.",
-            "verdict_plus": [
-                "Официальная гарантия",
-                "Высокий рейтинг покупателей",
-                "Быстрая доставка"
-            ],
-            "verdict_minus": [
-                "Ограниченное количество по акции"
-            ],
-            "market_link": "https://market.yandex.ru"
-        },
-        {
-            "id": 10,
-            "title": "JBL Даччик протечки",
-            "slug": "jbl-даччик-протечки-10",
-            "category": "Умный дом",
-            "is_juicy_discount": false,
-            "discount_percent": 0,
-            "price": 7246,
-            "price_formatted": "7 246 ₽",
-            "old_price_formatted": "7 246 ₽",
-            "price_status": "Выгодная цена",
-            "rating": 4.6,
-            "image": "https://images.unsplash.com/photo-1558089687-f282ffcbc126?auto=format&fit=crop&w=500&q=80",
-            "badge": "Хит",
-            "video_type": "rutube",
-            "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
-            "desc": "Официальный гаджет JBL Даччик протечки с гарантией и быстрой доставкой по всей России.",
-            "verdict_plus": [
-                "Официальная гарантия",
-                "Высокий рейтинг покупателей",
-                "Быстрая доставка"
-            ],
-            "verdict_minus": [
-                "Ограниченное количество по акции"
-            ],
-            "market_link": "https://market.yandex.ru"
-        },
-        {
-            "id": 11,
-            "title": "Lenovo iPhone 15 Pro 512GB",
-            "slug": "lenovo-iphone-15-pro-512gb-11",
-            "category": "Смартфоны",
-            "is_juicy_discount": false,
-            "discount_percent": 0,
-            "price": 74006,
-            "price_formatted": "74 006 ₽",
-            "old_price_formatted": "74 006 ₽",
-            "price_status": "Выгодная цена",
+            "discount_percent": 20,
+            "price": 13990,
+            "price_formatted": "13 990 ₽",
+            "old_price_formatted": "16 990 ₽",
+            "price_status": "Скидка -20%",
             "rating": 4.8,
-            "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80",
-            "badge": "Хит",
-            "video_type": "rutube",
-            "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
-            "desc": "Официальный гаджет Lenovo iPhone 15 Pro 512GB с гарантией и быстрой доставкой по всей России.",
-            "verdict_plus": [
-                "Официальная гарантия",
-                "Высокий рейтинг покупателей",
-                "Быстрая доставка"
-            ],
-            "verdict_minus": [
-                "Ограниченное количество по акции"
-            ],
-            "market_link": "https://market.yandex.ru"
-        },
-        {
-            "title": "Xbox Series X 1TB",
-            "slug": "xbox-series-x",
-            "category": "Игры",
-            "price": 52990,
-            "image": "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?auto=format&fit=crop&w=500&q=80",
-            "desc": "Флагманская консоль Microsoft с высокой производительностью.",
-            "id": 12,
-            "is_juicy_discount": false,
-            "discount_percent": 0,
-            "price_formatted": "52 990 ₽",
-            "old_price_formatted": "52 990 ₽",
-            "price_status": "Лучшая цена",
-            "rating": 4.9,
-            "badge": "Хит",
+            "image": "https://images.unsplash.com/photo-1543512214-318c7553f230?auto=format&fit=crop&w=600&q=80",
+            "badge": "С Алисой",
+            "desc": "Компактная умная колонка со встроенным хабом Zigbee, мощным звуком 24 Вт и LED-экраном.",
             "market_link": "https://market.yandex.ru"
         }
     ]
