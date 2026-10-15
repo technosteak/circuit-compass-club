@@ -3,44 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ТехноСтейк — Каталог техники, честные обзоры и лучшие цены</title>
-    <meta name="yandex-verification" content="hlxuv94aba53ntlh" />
+    <title>ТехноСтейк — Каталог техники и лучшие цены</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans antialiased">
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <button onclick="toggleMenu()" class="p-2 rounded-xl bg-slate-100 text-slate-700">☰</button>
-                <a href="/" class="flex items-center space-x-2">
-                    <span class="text-lg font-black bg-blue-600 text-white px-3 py-1 rounded-xl">ТС</span>
-                    <span class="text-lg font-bold">ТехноСтейк</span>
-                </a>
-            </div>
+            <a href="/" class="flex items-center space-x-2">
+                <span class="text-lg font-black bg-blue-600 text-white px-3 py-1 rounded-xl">ТС</span>
+                <span class="text-lg font-bold">ТехноСтейк</span>
+            </a>
             <a href="https://t.me/technosteak" target="_blank" class="text-xs font-bold text-white bg-blue-500 px-3.5 py-2 rounded-xl">Telegram</a>
         </div>
     </header>
-    <div id="mobileMenu" class="fixed inset-0 z-50 bg-slate-900/50 hidden">
-        <div class="bg-white w-4/5 max-w-xs h-full p-6" id="menuPanel">
-            <button onclick="toggleMenu()" class="mb-4 font-bold">✕ Закрыть</button>
-            <div class="flex flex-col space-y-3">
-                <a href="/" class="font-bold text-blue-600">🔥 Все товары</a>
-                <a href="https://t.me/technosteak" target="_blank" class="font-semibold text-slate-700">✈️ Наш канал</a>
-            </div>
-        </div>
-    </div>
     <main class="max-w-7xl mx-auto px-4 py-6">
         <div class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-8 text-white mb-6">
             <h1 class="text-2xl md:text-4xl font-black mb-2">Выбирайте технику с умом</h1>
-            <p class="text-blue-100 text-sm">Актуальные тренды, обзоры и лучшие цены.</p>
+            <p class="text-blue-100 text-sm">Сотни проверенных товаров с ценами и обзорами.</p>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="productsGrid"></div>
     </main>
     <script>
-        function toggleMenu() {
-            const m = document.getElementById('mobileMenu');
-            m.classList.toggle('hidden');
-        }
         async function load() {
             const res = await fetch('products.json?' + new Date().getTime());
             const data = await res.json();

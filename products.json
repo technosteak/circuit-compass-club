@@ -1,5 +1,5 @@
 {
-    "updated_at": "2026-10-15T07:52:22.085051",
+    "updated_at": "2026-10-15T07:54:38.304450",
     "products": [
         {
             "id": 1,
@@ -164,6 +164,33 @@
                     "minus": "Нет"
                 }
             ]
+        },
+        {
+            "id": 5,
+            "title": "Xbox Galaxy A55 5G 512GB",
+            "slug": "xbox-galaxy-a55-5g-512gb-5",
+            "category": "Смартфоны",
+            "is_juicy_discount": false,
+            "discount_percent": 0,
+            "price": 53432,
+            "price_formatted": "53 432 ₽",
+            "old_price_formatted": "53 432 ₽",
+            "price_status": "Выгодная цена",
+            "rating": 4.9,
+            "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80",
+            "badge": "Хит",
+            "video_type": "rutube",
+            "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
+            "desc": "Официальный гаджет Xbox Galaxy A55 5G 512GB с гарантией и быстрой доставкой по всей России.",
+            "verdict_plus": [
+                "Официальная гарантия",
+                "Высокий рейтинг покупателей",
+                "Быстрая доставка"
+            ],
+            "verdict_minus": [
+                "Ограниченное количество по акции"
+            ],
+            "market_link": "https://market.yandex.ru"
         }
     ]
 }
