@@ -1,5 +1,5 @@
 {
-    "updated_at": "2026-10-15T08:00:01.294113",
+    "updated_at": "2026-10-15T08:01:31.465849",
     "products": [
         {
             "id": 1,
@@ -352,6 +352,23 @@
             "verdict_minus": [
                 "Ограниченное количество по акции"
             ],
+            "market_link": "https://market.yandex.ru"
+        },
+        {
+            "title": "Xbox Series X 1TB",
+            "slug": "xbox-series-x",
+            "category": "Игры",
+            "price": 52990,
+            "image": "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?auto=format&fit=crop&w=500&q=80",
+            "desc": "Флагманская консоль Microsoft с высокой производительностью.",
+            "id": 12,
+            "is_juicy_discount": false,
+            "discount_percent": 0,
+            "price_formatted": "52 990 ₽",
+            "old_price_formatted": "52 990 ₽",
+            "price_status": "Лучшая цена",
+            "rating": 4.9,
+            "badge": "Хит",
             "market_link": "https://market.yandex.ru"
         }
     ]
