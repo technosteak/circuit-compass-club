@@ -1,5 +1,5 @@
 {
-    "updated_at": "2026-10-15T07:00:01.439651",
+    "updated_at": "2026-10-15T07:48:40.685182",
     "products": [
         {
             "id": 1,
@@ -11,10 +11,10 @@
             "price": 49990,
             "price_formatted": "49 990 ₽",
             "old_price_formatted": "66 500 ₽",
-            "price_status": "🔥 СОЧНАЯ СКИДКА -25%",
+            "price_status": "Скидка -25%",
             "rating": 4.9,
             "image": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=500&q=80",
-            "badge": "🔥 -25% СКИДКА",
+            "badge": "Хит продаж",
             "video_type": "rutube",
             "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
             "desc": "Мощная игровая консоль нового поколения с поддержкой 4K, трассировки лучей и SSD.",
@@ -54,10 +54,10 @@
             "price": 13990,
             "price_formatted": "13 990 ₽",
             "old_price_formatted": "19 990 ₽",
-            "price_status": "🔥 СОЧНАЯ СКИДКА -30%",
+            "price_status": "Скидка -30%",
             "rating": 4.8,
             "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80",
-            "badge": "🔥 -30% СКИДКА",
+            "badge": "Скидка",
             "video_type": "rutube",
             "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
             "desc": "Беспроводные наушники с активным шумоподавлением и басом.",
