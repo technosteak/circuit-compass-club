@@ -1,5 +1,5 @@
 {
-    "updated_at": "2026-10-15T07:54:40.371466",
+    "updated_at": "2026-10-15T07:54:42.391822",
     "products": [
         {
             "id": 1,
@@ -209,6 +209,33 @@
             "video_type": "rutube",
             "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
             "desc": "Официальный гаджет Realme Умная лампочка RGB с гарантией и быстрой доставкой по всей России.",
+            "verdict_plus": [
+                "Официальная гарантия",
+                "Высокий рейтинг покупателей",
+                "Быстрая доставка"
+            ],
+            "verdict_minus": [
+                "Ограниченное количество по акции"
+            ],
+            "market_link": "https://market.yandex.ru"
+        },
+        {
+            "id": 7,
+            "title": "Honor ZenBook OLED",
+            "slug": "honor-zenbook-oled-7",
+            "category": "Ноутбуки",
+            "is_juicy_discount": false,
+            "discount_percent": 0,
+            "price": 84919,
+            "price_formatted": "84 919 ₽",
+            "old_price_formatted": "84 919 ₽",
+            "price_status": "Выгодная цена",
+            "rating": 4.7,
+            "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80",
+            "badge": "Хит",
+            "video_type": "rutube",
+            "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
+            "desc": "Официальный гаджет Honor ZenBook OLED с гарантией и быстрой доставкой по всей России.",
             "verdict_plus": [
                 "Официальная гарантия",
                 "Высокий рейтинг покупателей",
