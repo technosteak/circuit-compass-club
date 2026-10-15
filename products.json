@@ -1,5 +1,5 @@
 {
-    "updated_at": "2026-10-15T07:54:42.391822",
+    "updated_at": "2026-10-15T07:54:44.556556",
     "products": [
         {
             "id": 1,
@@ -236,6 +236,33 @@
             "video_type": "rutube",
             "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
             "desc": "Официальный гаджет Honor ZenBook OLED с гарантией и быстрой доставкой по всей России.",
+            "verdict_plus": [
+                "Официальная гарантия",
+                "Высокий рейтинг покупателей",
+                "Быстрая доставка"
+            ],
+            "verdict_minus": [
+                "Ограниченное количество по акции"
+            ],
+            "market_link": "https://market.yandex.ru"
+        },
+        {
+            "id": 8,
+            "title": "Apple VR Headset 2",
+            "slug": "apple-vr-headset-2-8",
+            "category": "Игры",
+            "is_juicy_discount": true,
+            "discount_percent": 30,
+            "price": 8550,
+            "price_formatted": "8 550 ₽",
+            "old_price_formatted": "11 115 ₽",
+            "price_status": "🔥 Скидка -30%",
+            "rating": 4.7,
+            "image": "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=500&q=80",
+            "badge": "-30%",
+            "video_type": "rutube",
+            "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
+            "desc": "Официальный гаджет Apple VR Headset 2 с гарантией и быстрой доставкой по всей России.",
             "verdict_plus": [
                 "Официальная гарантия",
                 "Высокий рейтинг покупателей",
