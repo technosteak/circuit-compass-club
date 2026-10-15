@@ -1,5 +1,5 @@
 {
-    "updated_at": "2026-10-15T07:54:38.304450",
+    "updated_at": "2026-10-15T07:54:40.371466",
     "products": [
         {
             "id": 1,
@@ -182,6 +182,33 @@
             "video_type": "rutube",
             "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
             "desc": "Официальный гаджет Xbox Galaxy A55 5G 512GB с гарантией и быстрой доставкой по всей России.",
+            "verdict_plus": [
+                "Официальная гарантия",
+                "Высокий рейтинг покупателей",
+                "Быстрая доставка"
+            ],
+            "verdict_minus": [
+                "Ограниченное количество по акции"
+            ],
+            "market_link": "https://market.yandex.ru"
+        },
+        {
+            "id": 6,
+            "title": "Realme Умная лампочка RGB",
+            "slug": "realme-умная-лампочка-rgb-6",
+            "category": "Умный дом",
+            "is_juicy_discount": false,
+            "discount_percent": 0,
+            "price": 16564,
+            "price_formatted": "16 564 ₽",
+            "old_price_formatted": "16 564 ₽",
+            "price_status": "Выгодная цена",
+            "rating": 4.5,
+            "image": "https://images.unsplash.com/photo-1558089687-f282ffcbc126?auto=format&fit=crop&w=500&q=80",
+            "badge": "Хит",
+            "video_type": "rutube",
+            "video_id": "ee35f7959b4393663aa98b9f71c4c8da",
+            "desc": "Официальный гаджет Realme Умная лампочка RGB с гарантией и быстрой доставкой по всей России.",
             "verdict_plus": [
                 "Официальная гарантия",
                 "Высокий рейтинг покупателей",
